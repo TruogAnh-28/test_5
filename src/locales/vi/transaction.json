@@ -1,0 +1,55 @@
+{
+  "title": "Lịch sử giao dịch",
+  "status": {
+    "pending": "Đang xử lý",
+    "completed": "Hoàn thành",
+    "failed": "Thất bại",
+    "pay": "Thanh toán",
+    "refund": "Hoàn tiền",
+    "charge": "Nạp tiền"
+  },
+  "type": {
+    "payService": "Thanh toán dịch vụ",
+    "deposit": "Nạp tiền"
+  },
+  "table": {
+    "transactionId": "Mã giao dịch",
+    "walletId": "Mã ví",
+    "amount": "Số tiền",
+    "status": "Trạng thái",
+    "type": "Loại giao dịch",
+    "campaign": "Chiến dịch",
+    "date": "Ngày giao dịch"
+  },
+  "filter": {
+    "fromDate": "Từ ngày",
+    "toDate": "Đến ngày",
+    "chooseFromDate": "Chọn từ ngày",
+    "chooseToDate": "Chọn đến ngày",
+    "enterWalletId": "Nhập mã ví"
+  },
+  "detail": {
+    "title": "Chi tiết giao dịch",
+    "information": "Thông tin giao dịch",
+    "transactionId": "Mã giao dịch",
+    "amount": "Số tiền",
+    "walletId": "Mã ví",
+    "createdAt": "Thời gian tạo",
+    "campaignDetails": "Chi tiết chiến dịch",
+    "campaignName": "Tên chiến dịch",
+    "domain": "Tên miền",
+    "trafficAndCost": "Lưu lượng & Chi phí",
+    "visits": " lượt truy cập",
+    "campaignPeriod": "Thời gian chiến dịch",
+    "keywords": "Từ khóa",
+    "links": "Liên kết",
+    "keyword": "Từ khóa",
+    "traffic": "Lưu lượng",
+    "cost": "Chi phí",
+    "source": "Nguồn",
+    "target": "Đích",
+    "noKeywords": "Không có từ khóa nào",
+    "noLinks": "Không có liên kết nào",
+    "notFound": "Không tìm thấy giao dịch"
+  }
+}

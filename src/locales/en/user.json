@@ -1,0 +1,63 @@
+{
+  "title": "User List",
+  "createTitle": "Create New User",
+  "updateTitle": "Update User",
+  "form": {
+    "title": "User",
+    "fullName": "Full Name",
+    "email": "Email",
+    "gender": "Gender",
+    "genderOptions": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "role": "Role",
+    "roleOptions": {
+      "admin": "Admin",
+      "user": "User",
+      "client": "User"
+    },
+    "passwordTitle": "The user's password is: {password}",
+    "passwordDescription": "The password will be sent to the user's email. This message will only appear once.",
+    "copyPassword": "Copy Password",
+    "passwordCopied": "Password copied successfully",
+    "createSuccess": "User created successfully",
+    "updateSuccess": "User updated successfully",
+    "requestFailed": "Request failed",
+    "placeholders": {
+      "fullName": "Enter full name",
+      "email": "Enter email address",
+      "username": "Username is required",
+      "password": "Password is required",
+      "roleId": "Invalid role"
+    },
+    "errorMessages": {
+      "invalidEmail": "Email must be valid"
+    }
+  },
+  "table": {
+    "fullName": "Full Name",
+    "email": "Email",
+    "gender": "Gender",
+    "role": "Role",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleteConfirm": {
+      "title": "Delete User",
+      "description": "Are you sure you want to delete this user? This action cannot be undone.",
+      "action": "Delete User"
+    }
+  },
+  "users": {
+      "placeholders": {
+        "username": "Username is required",
+        "password": "Password is required",
+        "roleId": "Role ID must be at least -1"
+      }
+    },
+  "errorMessages": {
+    "invalidEmail": "Invalid email address"
+  }
+}

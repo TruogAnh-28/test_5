@@ -1,0 +1,63 @@
+{
+  "title": "Danh sách người dùng",
+  "createTitle": "Tạo người dùng mới",
+  "updateTitle": "Cập nhật người dùng",
+  "form": {
+    "title": "Người dùng",
+    "fullName": "Họ và tên",
+    "email": "Email",
+    "gender": "Giới tính",
+    "genderOptions": {
+      "male": "Nam",
+      "female": "Nữ",
+      "other": "Khác"
+    },
+    "role": "Chức vụ",
+    "roleOptions": {
+      "admin": "Quản lí",
+      "user": "Người dùng",
+      "client": "Người dùng"
+    },
+    "passwordTitle": "Mật khẩu của người dùng là: {password}",
+    "passwordDescription": "Mật khẩu sẽ được gửi đến email của người dùng. Thông báo này chỉ hiển thị một lần.",
+    "copyPassword": "Sao chép mật khẩu",
+    "passwordCopied": "Sao chép mật khẩu thành công",
+    "createSuccess": "Tạo người dùng thành công",
+    "updateSuccess": "Cập nhật người dùng thành công",
+    "requestFailed": "Yêu cầu thất bại",
+    "placeholders": {
+      "fullName": "Nhập họ và tên",
+      "email": "Nhập địa chỉ email",
+      "username": "Tên người dùng không được để trống",
+      "password": "Mật khẩu không được để trống",
+      "roleId": "Chức vụ không hợp lệ"
+    },
+    "errorMessages": {
+      "invalidEmail": "Email không hợp lệ"
+    }
+  },
+  "table": {
+    "fullName": "Họ và tên",
+    "email": "Email",
+    "gender": "Giới tính",
+    "role": "Chức vụ",
+    "actions": "Tùy chỉnh",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "deleteConfirm": {
+      "title": "Xóa người dùng",
+      "description": "Bạn có chắc chắn muốn xóa người dùng này không? Hành động này không thể hoàn tác.",
+      "action": "Xóa người dùng"
+    }
+  },
+  "users": {
+      "placeholders": {
+        "username": "Vui lòng nhập tên người dùng",
+        "password": "Vui lòng nhập mật khẩu",
+        "roleId": "Role ID phải lớn hơn hoặc bằng -1"
+      }
+    },
+  "errorMessages": {
+    "invalidEmail": "Địa chỉ email không hợp lệ"
+  }
+}

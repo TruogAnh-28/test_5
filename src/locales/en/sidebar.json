@@ -1,0 +1,30 @@
+{
+  "home": "Home",
+  "reports": "Reports",
+  "agency": "Agency",
+  "campaigns": {
+    "title": "Campaigns",
+    "traffic": "Traffic",
+    "backlink": "Backlink"
+  },
+  "transactions": {
+    "title": "My Wallet",
+    "deposit": "Deposit",
+    "depositHistory": "Deposit History",
+    "transactionHistory": "Transaction History",
+    "depositVerification": "Deposit Verification"
+  },
+  "accounts": {
+    "title": "Accounts",
+    "employees": "Employees",
+    "users": "Users"
+  },
+  "permissions": {
+    "title": "Permissions",
+    "permissionsList": "Permissions List",
+    "rolesList": "Roles List"
+  },
+  "setting": {
+    "title": "Setting"
+  }
+}

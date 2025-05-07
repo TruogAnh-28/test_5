@@ -1,0 +1,63 @@
+{
+  "title": "Danh sách chiến dịch Backlink",
+  "titleCreate": "Tạo chiến dịch Backlink",
+  "titleUpdate": "Cập nhật chiến dịch Backlink",
+  "create": "Tạo chiến dịch",
+  "edit": "Chỉnh sửa chiến dịch",
+  "filters": {
+    "device": "Thiết bị",
+    "allDevices": "Tất cả thiết bị",
+    "status": "Trạng thái",
+    "domain": "Tên miền",
+    "dateRange": "Thời gian",
+    "startDate": "Bắt đầu: ",
+    "endDate": "Kết thúc: ",
+    "chooseStartDate": "Chọn ngày bắt đầu",
+    "chooseEndDate": "Chọn ngày kết thúc",
+    "enterDomain": "Nhập tên miền cần lọc"
+  },
+  "deviceOptions": {
+    "mobile": "Mobile",
+    "tablet": "Tablet",
+    "desktop": "Desktop",
+    "all": "Tất cả thiết bị"
+  },
+  "statusOptions": {
+    "notStarted": "Chưa bắt đầu",
+    "active": "Hoạt động",
+    "paused": "Tạm dừng",
+    "completed": "Hoàn thành"
+  },
+  "table": {
+    "campaignName": "Tên chiến dịch",
+    "domain": "Tên miền",
+    "device": "Thiết bị",
+    "traffic": "Traffic",
+    "cost": "Chi phí",
+    "timeframe": "Thời gian",
+    "status": "Trạng thái",
+    "actions": "Tùy chỉnh",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "startDate": "Bắt đầu: ",
+    "endDate": "Kết thúc: ",
+    "noData": "Không có dữ liệu nào.",
+    "loading": "Đang tải dữ liệu..."
+  },
+  "action": {
+    "action": "Tùy chỉnh",
+    "edit": "Sửa",
+    "deleteCampaign": "Xóa chiến dịch",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa chiến dịch này không?",
+    "delete": "Xóa"
+  },
+  "deleteDialog": {
+    "title": "Xóa chiến dịch",
+    "description": "Bạn có chắc chắn muốn xóa chiến dịch này không? Hành động này không thể hoàn tác.",
+    "action": "Xóa chiến dịch"
+  },
+  "messages": {
+    "deleteSuccess": "Chiến dịch đã được xóa thành công",
+    "fetchError": "Lỗi khi tải chiến dịch: "
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "title": "Agent Management",
+  "register": "Register as agent",
+  "dashboard": "Agent Dashboard",
+  "ID": "ID",
+  "form": {
+    "title": "Register to Become an Agent",
+    "description": "Please fill in the information below to register as an agent",
+    "phone": "Phone Number",
+    "phonePlaceholder": "Enter your phone number",
+    "bankName": "Bank Name",
+    "bankNamePlaceholder": "Select a bank",
+    "bankAccount": "Bank Account Number",
+    "bankAccountPlaceholder": "Enter your bank account number",
+    "accountHolder": "Account Holder Name",
+    "accountHolderPlaceholder": "Enter the account holder's name",
+    "submit": "Register",
+    "successMessage": "Agent registration successful!",
+    "requestFailed": "Request failed",
+    "note": "Note",
+    "notRegistered": "You have not registered as an agent",
+    "noteItems": {
+      "checkInfo": "Please carefully review your information before submitting the registration.",
+      "approvalProcess": "Agent registration requests will be reviewed within 24-48 business hours.",
+      "earnings": "Commission will be calculated based on the transaction value of users you refer."
+    },
+    "benefitsTitle": "Benefits of becoming an agent",
+    "benefits": {
+      "commission": "Earn commissions from transactions of users you refer",
+      "dashboard": "Access the agent dashboard to track performance",
+      "support": "Receive priority support from the customer service team"
+    },
+    "validation": {
+      "phoneMin": "Phone number must be at least 10 digits",
+      "phoneMax": "Phone number must be no more than 15 digits",
+      "bankAccountRequired": "Bank account number cannot be empty",
+      "bankNameRequired": "Please select a bank",
+      "accountHolderRequired": "Account holder name cannot be empty"
+    }
+  },
+  "referral": {
+    "success": "Agent registration successful!",
+    "description": "Below is your referral link. When users register through this link, they will be associated with your agent account.",
+    "copy": "Copy",
+    "copied": "Referral link copied!",
+    "shareTitle": "Share Referral Link",
+    "shareDescription": "Share this link with friends, colleagues, or on social media to invite them to register through your agency.",
+    "share": "Share",
+    "backToDashboard": "Back to Dashboard",
+    "inviteCode": "Invite Code"
+  },
+  "stats": {
+    "title": "Agent Statistics",
+    "totalReferrals": "Total Referrals",
+    "activeReferrals": "Active Referrals",
+    "totalEarnings": "Total Earnings",
+    "conversionRate": "Conversion Rate",
+    "recentReferrals": "Recent Referrals",
+    "viewAll": "View All",
+    "noReferralsYet": "No referrals yet",
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "registeredAt": "Registration Date",
+      "status": "Status",
+      "earnings": "Earnings",
+      "createdAt": "Created at"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    }
+  },
+  "status": {
+    "pending": "Pending",
+    "active": "Active",
+    "suspended": "Suspended",
+    "rejected": "Rejected"
+  }
+}

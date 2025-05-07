@@ -1,0 +1,40 @@
+{
+  "words": [
+    "autodocs",
+    "clsx",
+    "commitlint",
+    "datasource",
+    "devtools",
+    "esbuild",
+    "eslintcache",
+    "formik",
+    "immer",
+    "middlewares",
+    "NEXTAUTH",
+    "nextjs",
+    "notistack",
+    "persistor",
+    "pino",
+    "prefetch",
+    "reduxjs",
+    "regexes",
+    "sonner",
+    "sooner",
+    "stylelint",
+    "supabase",
+    "swiper",
+    "tailwindcss",
+    "tanstack",
+    "trpc",
+    "typecheck",
+    "zustand"
+  ],
+  "ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders"
+  ]
+}

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Phudu:wght@300..900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 180 49% 11%;              /* #104f50 */
+  --primary-foreground: 0 0% 100%; /* #ffffff */
+  --destructive: 0 77% 44%;        /* #CD1818 */
+  --background: 0 0% 100%;         /* #ffffff */
+  --foreground: 0 0% 9%;           /* #171717 */
+  --accent: 181 65% 45%;           /* #27BDBE */
+  --accent-foreground: 0 0% 100%;  /* #ffffff */
+  --success: 120 74% 40%;          /* #19ae19 */
+  --error: 0 77% 44%;              /* #CD1818 */
+  --warning: 48 81% 51%;           /* #e8bf19 */
+
+
+  --pending: 35 100% 50%; /* Màu cam */
+  --processing: 217 90% 80%; /* Màu xanh dương */
+  --partial-paid: 292 59% 41%; /* Màu tím nhạt */
+  --approved: 217 90% 55%;
+  --paid: 122 39% 49%; /* Màu xanh lá */
+  --completed: 144 50% 30%; /* Màu xanh lá đậm */
+  --cancelled: 0 0% 62%; /* Màu xám */
+  --order-error: 4 90% 58%; /* Màu đỏ */
+  --refunded: 25 25% 40%;
+
+
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}

@@ -1,0 +1,13 @@
+{
+  "welcome": {
+    "title": "Welcome to your dashboard",
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "message": "Welcome to your campaign dashboard. View your reports and analytics here.",
+    "newCampaign": "New Campaign",
+    "viewReports": "View Reports"
+  },
+  "trafficTrend": "Traffic Trend",
+  "totalTraffic": "Total Traffic"
+}

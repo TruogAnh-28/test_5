@@ -1,0 +1,142 @@
+{
+  "title": "Lịch sử nạp tiền",
+  "form": {
+    "title": "Nạp Tiền",
+    "description": "Chọn phương thức thanh toán và nhập thông tin nạp tiền",
+    "amount": "Số tiền nạp",
+    "enterAmount": "Nhập số tiền cần nạp",
+    "voucherCode": "Mã khuyến mãi (không bắt buộc)",
+    "voucherCodePlaceholder": "Nhập mã khuyến mãi",
+    "applyVoucher": "Áp dụng",
+    "totalAfterDiscount": "Tổng tiền sau ưu đãi",
+    "confirm": "Xác nhận nạp tiền",
+    "note": "Lưu ý",
+    "creditAmount": "Số credit cần nạp",
+    "enterCreditAmount": "Nhập số credit cần nạp",
+    "minimumCredit": "Số credit tối thiểu là 10",
+    "maximumCredit": "Số credit tối đa là 100,000",
+    "paymentAmount": "Số tiền thanh toán",
+    "rates": {
+      "creditToVnd": "Tỷ giá: 1 credit = {rate} VND",
+      "creditToUsdt": "Tỷ giá: 1 credit = {rate} USDT"
+    },
+    "noteItems": {
+      "checkInfo": "Vui lòng kiểm tra kỹ thông tin trước khi thực hiện giao dịch.",
+      "processingTime": "Yêu cầu nạp tiền sẽ được xử lý trong vòng 24 giờ làm việc.",
+      "txidRequired": "Mã giao dịch (TxID) là bắt buộc để xác minh giao dịch của bạn.",
+      "transferContent": "Hãy đảm bảo sử dụng đúng nội dung chuyển khoản: ",
+      "support": "Nếu bạn gặp vấn đề khi nạp tiền, vui lòng liên hệ hỗ trợ."
+    },
+    "selectPaymentMethod": "Chọn phương thức thanh toán",
+    "paymentNotice": "Thông báo thanh toán",
+    "paymentNoticeDesc": "Sau khi xác nhận, một tab mới sẽ mở ra với trang thanh toán an toàn của chúng tôi.",
+    "paymentMethods": {
+      "online": "PayOS",
+      "onlineName": "Thanh toán trực tuyến",
+      "onlineDesc": "Thanh toán qua các phương thức trực tuyến (Thẻ ngân hàng, Ví điện tử, QR Code)"
+    },
+    "wallet": {
+      "usdt_trc20": "USDT-TRC20",
+      "usdt_erc20": "USDT-ERC20",
+      "trc20Address": "Địa chỉ ví USDT (TRC20)",
+      "erc20Address": "Địa chỉ ví USDT (ERC20)",
+      "vietqrInfo": "Thông tin chuyển khoản VietQR",
+      "networkWarningTrc20": "Vui lòng chỉ chuyển USDT qua mạng TRC20. Lưu ý: phí giao dịch do người gửi chi trả",
+      "networkWarningErc20": "Phí gas mạng ERC20 có thể cao, hãy kiểm tra trước khi chuyển",
+      "transferContentWarning": "Vui lòng nhập đúng nội dung chuyển khoản",
+      "txid": "Mã giao dịch (TxID)",
+      "enterTxid": "Nhập mã giao dịch để xác minh",
+      "txidHelp": "Mã giao dịch có thể tìm thấy trong lịch sử giao dịch của ví",
+      "bankTransferId": "Mã giao dịch",
+      "enterBankId": "Nhập mã giao dịch ngân hàng để xác minh",
+      "instructions": "Hướng dẫn thanh toán",
+      "instructionsDescTrc20": "Vui lòng chuyển USDT sử dụng mạng TRC20 vào địa chỉ ví của chúng tôi. Chúng tôi sẽ xử lý nạp tiền sau khi xác nhận giao dịch của bạn.",
+      "instructionsDescErc20": "Vui lòng chuyển USDT sử dụng mạng ERC20 vào địa chỉ ví của chúng tôi. Chúng tôi sẽ xử lý nạp tiền sau khi xác nhận giao dịch của bạn.",
+      "selectUnit": "Đơn vị tiền tệ",
+      "selectUnitPlaceholder": "Chọn đơn vị tiền tệ",
+      "unitHelp": "Vui lòng chọn đơn vị tiền tệ bạn sẽ sử dụng để thanh toán",
+      "bankInfo": {
+        "bank": "Ngân hàng",
+        "accountNumber": "Số tài khoản",
+        "accountName": "Chủ tài khoản",
+        "transferContent": "Nội dung CK",
+        "enterAmountForQR": "Nhập số tiền để hiển thị mã QR"
+      }
+    }
+  },
+  "status": {
+    "pending": "Chờ xử lý",
+    "approved": "Đã duyệt",
+    "rejected": "Từ chối",
+    "unknown": "Không xác định",
+    "failed": "Thất bại",
+    "completed": "Thành công"
+  },
+  "credit": {
+    "total": "{amount} credit",
+    "bonusPercentage": "(+{percentage}%)"
+  },
+
+  "table": {
+    "depositCode": "Mã giao dịch",
+    "amount": "Số tiền",
+    "method": "Phương thức",
+    "voucherCode": "Mã Voucher",
+    "status": "Trạng thái",
+    "createdAt": "Ngày tạo",
+    "noVoucher": "Không có",
+    "user": "Người dùng"
+  },
+  "voucher": {
+    "applied": "Áp dụng thành công: +",
+    "enterCode": "Nhập mã voucher",
+    "error": "Vui lòng nhập mã voucher"
+  },
+  "filter": {
+    "fromDate": "Từ ngày",
+    "toDate": "Đến ngày",
+    "chooseFromDate": "Chọn từ ngày",
+    "chooseToDate": "Chọn đến ngày",
+    "code": "Mã giao dịch",
+    "codePlaceholder": "Nhập mã giao dịch"
+  },
+  "detail": {
+    "title": "Chi tiết đơn nạp",
+    "information": "Thông tin nạp",
+    "transactionId": "Mã đơn nạp",
+    "amount": "Số tiền",
+    "paymentMethod": "Phương thức thanh toán",
+    "voucherCode": "Mã khuyến mãi",
+    "createdAt": "Ngày tạo",
+    "processedAt": "Ngày xử lý",
+    "pending": "Đang chờ xử lý",
+    "rejectionReason": "Lý do từ chối",
+    "noReasonProvided": "Không có lý do được cung cấp",
+    "notFound": "Không tìm thấy giao dịch",
+    "pendingNote": "Giao dịch đang được xử lý",
+    "pendingDescription": "Giao dịch nạp tiền của bạn đang được xử lý. Quá trình này có thể mất đến 24 giờ. Vui lòng kiểm tra lại sau.",
+    "approvedNote": "Giao dịch hoàn tất thành công",
+    "balanceUpdated": "Số dư tài khoản của bạn đã được cập nhật với số tiền đã nạp."
+  },
+  "failed": {
+    "title": "Thanh toán thất bại",
+    "paymentFailed": "Không thể xử lý thanh toán của bạn",
+    "defaultError": "Đã xảy ra lỗi khi xử lý thanh toán của bạn. Vui lòng thử lại sau.",
+    "errorCode": "Mã lỗi",
+    "transactionId": "Mã giao dịch",
+    "whatHappened": "Chuyện gì đã xảy ra?",
+    "whatHappenedDesc": "Thanh toán của bạn bị từ chối hoặc đã xảy ra lỗi trong quá trình thanh toán. Điều này có thể do không đủ tiền, hạn chế thanh toán, hoặc sự cố kỹ thuật.",
+    "whatToDo": "Tôi nên làm gì?",
+    "checkPaymentMethod": "Kiểm tra thông tin phương thức thanh toán và đảm bảo bạn có đủ tiền",
+    "tryAgainLater": "Thử lại sau hoặc sử dụng phương thức thanh toán khác",
+    "contactSupport": "Liên hệ hỗ trợ khách hàng nếu vấn đề vẫn tiếp diễn",
+    "viewHistory": "Xem lịch sử nạp tiền",
+    "tryAgain": "Thử lại"
+  },
+  "method": {
+    "USDT": "USDT",
+    "QRCODE": "QR Code",
+    "PayOS": "PayOS",
+    "Gift": "Quà tặng"
+  }
+}

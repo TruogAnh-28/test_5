@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "login": {
+          "title": "Login"
+    }
+  },
+  "campaigns": {
+    "viewCampaigns": {
+      "title": "Campaigns"
+    },
+    "viewCampaign": {
+      "title": "Campaign's Detail"
+    }
+  }
+}

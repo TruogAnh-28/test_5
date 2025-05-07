@@ -1,0 +1,28 @@
+{
+    "success": {
+      "title": "Email Đã Xác Minh",
+      "verificationComplete": "Xác Minh Hoàn Tất",
+      "accountVerified": "Email của bạn đã được xác minh thành công. Bạn có thể truy cập tất cả các tính năng của tài khoản.",
+      "continueToLogin": "Tiếp Tục Đến Đăng Nhập"
+    },
+    "failed": {
+      "title": "Xác Minh Thất Bại",
+      "verificationFailed": "Xác Minh Email Thất Bại",
+      "tokenInvalid": "Liên kết xác minh không hợp lệ hoặc đã hết hạn.",
+      "whatToDo": "Tôi nên làm gì?",
+      "tryAgain": "Thử sử dụng lại liên kết xác minh",
+      "checkEmail": "Đảm bảo bạn đang sử dụng email xác minh mới nhất",
+      "contactSupport": "Liên hệ hỗ trợ nếu bạn tiếp tục gặp vấn đề",
+      "backToLogin": "Quay Lại Đăng Nhập",
+      "resendVerification": "Gửi Lại Email Xác Minh",
+      "resending": "Đang gửi...",
+      "resendSuccess": "Đã gửi email xác minh thành công",
+      "resendError": "Không thể gửi email xác minh",
+      "noEmailProvided": "Không có email được cung cấp để gửi lại xác minh",
+      "noToken": "Không có mã xác minh được cung cấp"
+    },
+    "loading": {
+      "verifying": "Đang xác minh email của bạn..."
+    }
+
+}

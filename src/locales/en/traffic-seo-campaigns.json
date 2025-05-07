@@ -1,0 +1,192 @@
+{
+  "title": "Traffic SEO Campaigns List",
+  "titleCreate": "Create New Traffic Campaign",
+  "titleUpdate": "Update Traffic Campaign",
+  "titleDetail": "Campaign Details",
+  "create": "Create campaign",
+  "edit": "Edit Campaign",
+  "detail": {
+      "summary": "Campaign Summary",
+      "keywordCount": "Keywords",
+      "linkCount": "Links",
+      "backToList": "Back to list",
+      "errorTitle": "Error loading Campaign",
+      "errorLoading": "Error loading campaign data",
+      "unknownError": "Unknown error occurred",
+      "notFoundTitle": "Campaign Not Found",
+      "noDetailsFound": "The requested campaign details could not be found.",
+      "progress": "Campaign Progress",
+      "campaignTimeline": "Timeline and key performance metrics",
+      "daysRemaining": "days left",
+      "targetTraffic": "Target Traffic",
+      "domainInfo": "Domain Information",
+      "statusJustStarted": "Just started",
+      "statusInProgress": "In progress",
+      "statusNearlyComplete": "Nearly complete",
+      "statusComplete": "Complete",
+      "totalKeywords": "keywords",
+      "keywordsDescription": "Keywords targeted in this SEO campaign with their traffic and distribution metrics",
+      "totalLinks": "links",
+      "linksDescription": "Backlinks created for this campaign with their status and traffic metrics"
+  },
+  "filters": {
+    "device": "Device",
+    "allDevices": "All Devices",
+    "status": "Status",
+    "domain": "Domain",
+    "dateRange": "Date Range",
+    "startDate": "Start date: ",
+    "endDate": "End date: ",
+    "chooseStartDate": "Choose start date",
+    "chooseEndDate": "Choose end date",
+    "enterDomain": "Enter domain to filter"
+  },
+  "deviceOptions": {
+    "mobile": "Mobile",
+    "tablet": "Tablet",
+    "desktop": "Desktop",
+    "all": "All Devices"
+  },
+  "statusOptions": {
+    "active": "Active",
+    "paused": "Paused",
+    "scheduled": "Scheduled",
+    "inactive": "Inactive",
+    "processing": "Processing",
+    "notStarted": "Not Started",
+    "completed": "Completed",
+    "cancel": "Cancel"
+  },
+  "form": {
+    "sectionInfo": "campaign",
+    "name": "Campaign Name",
+    "user": "User",
+    "domain": "Domain",
+    "search": "Search Engine",
+    "title": "Web Title",
+    "country": "Country",
+    "device": "Device",
+    "dateRange": "Date Range",
+    "totalTraffic": "Total Traffic",
+    "cost": "Cost",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "isSubmmitting": "Is submitting",
+    "submitting": "Processing your request...",
+    "dailyTraffic": "Daily Traffic",
+    "summary": {
+      "title": "Campaign Summary",
+      "calculatedTraffic": "Total Traffic",
+      "calculatedCost": "Total Cost",
+      "traffic": "Traffic"
+    },
+    "placeholders": {
+      "name": "Enter campaign name",
+      "domain": "Enter domain (e.g. example.com)",
+      "search": "Enter search engine (e.g. Google)",
+      "title": "Enter web title",
+      "country": "Select country",
+      "device": "Select device"
+    },
+    "errors": {
+      "endDateBeforeStartDate": "End date must be after start date"
+    },
+    "errorMessages": {
+      "atLeastOneUrl": "Please provide at least one URL",
+      "invalidSourceUrl": "Link source must be a valid URL",
+      "invalidTargetUrl": "Link target must be a valid URL",
+      "trafficPositive": "Traffic cannot be less than 0",
+      "totalTrafficPositive": "Total traffic cannot be less than 0",
+      "costPositive": "Cost cannot be less than 0",
+      "invalidDomain": "Domain must be a valid URL",
+      "invalidUrl": "URL must be valid",
+      "requestFailed": "Request failed",
+      "requireKeywordOrLink": "Campaign must have at least one keyword or one link",
+      "endDateBeforeStartDate": "End date must be after start date"
+    },
+    "keywords": {
+      "title": "Keywords",
+      "add": "Add Keyword",
+      "empty": "No keywords yet. Please add keywords for the campaign.",
+      "keyword": "Keyword",
+      "name": "Keyword",
+      "traffic": "Traffic",
+      "distribution": "Distribution",
+      "urls": "URLs",
+      "addUrl": "Add URL",
+      "costCalculation": "Cost calculation",
+      "placeholders": {
+        "name": "Enter keyword",
+        "traffic": "Enter traffic for this keyword",
+        "url": "https://example.com/page"
+      }
+    },
+    "links": {
+      "title": "Links",
+      "add": "Add Link",
+      "empty": "No links yet. Please add links for the campaign.",
+      "link": "Link",
+      "linkSource": "Source Link",
+      "linkTarget": "Target Link",
+      "distribution": "Distribution",
+      "traffic": "Traffic",
+      "anchorText": "Anchor Text",
+      "status": "Status",
+      "url": "URL",
+      "page": "Page",
+      "costCalculation": "Cost calculation",
+      "placeholders": {
+        "linkSource": "Enter source link",
+        "linkTarget": "Enter target link",
+        "distribution": "Enter distribution method",
+        "traffic": "Enter traffic for this link",
+        "anchorText": "Enter anchor text",
+        "url": "Enter URL",
+        "page": "Enter page"
+      }
+    },
+    "distributionOptions": {
+      "day": "Day",
+      "month": "Month",
+      "year": "Year"
+    },
+    "successMessages": {
+      "create": "Campaign has been successfully created",
+      "update": "Campaign has been successfully updated"
+    }
+  },
+  "tooltips": {
+    "name": "Enter a descriptive name for your campaign to easily identify it",
+    "domain": "The target website domain: example.com",
+    "search": "The search engine where your campaign will be visible",
+    "title": "The title that will appear in search results",
+    "startDate": "When the campaign should begin",
+    "endDate": "When the campaign should finish",
+    "device": "Target devices for your campaign",
+    "status": "Current status of the campaign",
+    "country": "Target country for your campaign traffic",
+    "keyword": "Search term that users will find your content with",
+    "keywordTraffic": "Total traffic for this keyword estimated from start date to end date",
+    "linkTraffic": "Estimated number of visitors for this backlink",
+    "distribution": "How traffic will be distributed over time",
+    "link": "The website where the backlink will be placed",
+    "linkTarget": "The target URL where users will be directed",
+    "anchorText": "The clickable text that contains the link",
+    "url": "Full URL including http:// or https://",
+    "page": "Specific page where the link will be placed"
+  },
+  "table": {
+    "noData": "No data available.",
+    "loading": "Loading data..."
+  },
+  "action":{
+    "action": "Action",
+    "edit": "Edit",
+    "pause": "Pause",
+    "pauseCampaign": "Pause Campaign",
+    "pauseConfirm": "Are you sure you want to pause this campaign? This action will stop traffic generation for this campaign.",
+    "deleteCampaign": "Delete Campaign",
+    "deleteConfirm": "Are you sure you want to delete this campaign?",
+    "delete": "Delete"
+  }
+}

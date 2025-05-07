@@ -1,0 +1,80 @@
+{
+  "title": "Quản lý đại lý",
+  "register": "Đăng ký đại lý",
+  "dashboard": "Thống kê đại lý",
+  "ID": "ID",
+  "form": {
+    "title": "Đăng ký trở thành đại lý",
+    "description": "Vui lòng điền thông tin dưới đây để đăng ký trở thành đại lý",
+    "phone": "Số điện thoại",
+    "phonePlaceholder": "Nhập số điện thoại của bạn",
+    "bankName": "Tên ngân hàng",
+    "bankNamePlaceholder": "Chọn ngân hàng",
+    "bankAccount": "Số tài khoản",
+    "bankAccountPlaceholder": "Nhập số tài khoản ngân hàng",
+    "accountHolder": "Tên chủ tài khoản",
+    "accountHolderPlaceholder": "Nhập tên chủ tài khoản",
+    "submit": "Đăng ký",
+    "successMessage": "Đăng ký đại lý thành công!",
+    "requestFailed": "Yêu cầu thất bại",
+    "note": "Lưu ý",
+    "notRegistered": "Bạn chưa đăng ký làm đại lý",
+    "noteItems": {
+      "checkInfo": "Vui lòng kiểm tra kỹ thông tin trước khi gửi đăng ký.",
+      "approvalProcess": "Yêu cầu đăng ký đại lý sẽ được xem xét trong vòng 24-48 giờ làm việc.",
+      "earnings": "Tiền hoa hồng sẽ được tính dựa trên giá trị giao dịch của người dùng bạn giới thiệu."
+    },
+    "benefitsTitle": "Lợi ích khi trở thành đại lý",
+    "benefits": {
+      "commission": "Nhận hoa hồng từ các giao dịch của người dùng do bạn giới thiệu",
+      "dashboard": "Truy cập bảng điều khiển đại lý để theo dõi hiệu suất",
+      "support": "Được hỗ trợ ưu tiên từ đội ngũ dịch vụ khách hàng"
+    },
+    "validation": {
+      "phoneMin": "Số điện thoại ít nhất 10 số",
+      "phoneMax": "Số điện thoại tối đa 15 số",
+      "bankAccountRequired": "Số tài khoản không được để trống",
+      "bankNameRequired": "Vui lòng chọn ngân hàng",
+      "accountHolderRequired": "Tên chủ tài khoản không được để trống"
+    }
+  },
+  "referral": {
+    "success": "Đăng ký đại lý thành công!",
+    "description": "Dưới đây là đường dẫn giới thiệu của bạn. Khi người dùng đăng ký thông qua đường dẫn này, họ sẽ được liên kết với tài khoản đại lý của bạn.",
+    "copy": "Sao chép",
+    "copied": "Đã sao chép đường dẫn giới thiệu!",
+    "shareTitle": "Chia sẻ đường dẫn giới thiệu",
+    "shareDescription": "Chia sẻ đường dẫn này với bạn bè, đồng nghiệp hoặc trên mạng xã hội để mời họ đăng ký qua đại lý của bạn.",
+    "share": "Chia sẻ",
+    "backToDashboard": "Quay lại trang chủ",
+    "inviteCode": "Mã mời"
+  },
+  "stats": {
+    "title": "Thống kê đại lý",
+    "totalReferrals": "Tổng số giới thiệu",
+    "activeReferrals": "Giới thiệu đang hoạt động",
+    "totalEarnings": "Tổng thu nhập",
+    "conversionRate": "Tỷ lệ chuyển đổi",
+    "recentReferrals": "Giới thiệu gần đây",
+    "viewAll": "Xem tất cả",
+    "noReferralsYet": "Chưa có giới thiệu nào",
+    "table": {
+      "name": "Tên",
+      "email": "Email",
+      "registeredAt": "Ngày đăng ký",
+      "status": "Trạng thái",
+      "earnings": "Thu nhập",
+      "createdAt": "Ngày tạo"
+    },
+    "status": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    }
+  },
+  "status": {
+    "pending": "Chờ xét duyệt",
+    "active": "Hoạt động",
+    "suspended": "Tạm ngưng",
+    "rejected": "Từ chối"
+  }
+}

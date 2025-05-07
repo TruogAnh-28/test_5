@@ -1,0 +1,33 @@
+{
+  "title": "Role List",
+  "createTitle": "Create New Role",
+  "updateTitle": "Update Role",
+  "roleId": "Role ID",
+  "roleName": "Role Name",
+  "permissions": "permissions",
+  "permissionsList": "Permissions List",
+  "actions": "Actions",
+  "edit": "Edit",
+  "delete": "Delete",
+  "createBtn": "Create Role",
+  "managingPermissionsFor": "Managing Permissions for",
+  "selectPermissionsDesc": "Select the permissions you want to assign to this role",
+  "form": {
+    "title": "Role",
+    "roleName": "Role Name",
+    "roleNamePlaceholder": "Enter role name",
+    "status": "Status",
+    "statusOptions": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "createSuccess": "Role created successfully",
+    "updateSuccess": "Role updated successfully",
+    "requestFailed": "Request failed"
+  },
+  "deleteConfirm": {
+    "title": "Delete Role",
+    "description": "Are you sure you want to delete this role? This action cannot be undone.",
+    "action": "Delete Role"
+  }
+}

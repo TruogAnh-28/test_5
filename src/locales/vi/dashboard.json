@@ -1,0 +1,13 @@
+{
+  "welcome": {
+    "title": "Chào mừng đến với bảng điều khiển",
+    "morning": "Chào buổi sáng",
+    "afternoon": "Chào buổi chiều",
+    "evening": "Chào buổi tối",
+    "message": "Chào mừng đến với bảng điều khiển chiến dịch của bạn. Xem báo cáo và phân tích tại đây.",
+    "newCampaign": "Chiến dịch mới",
+    "viewReports": "Xem báo cáo"
+  },
+  "trafficTrend": "Xu hướng Traffic (7 Ngày Qua)",
+  "totalTraffic": "Tổng Traffic"
+}

@@ -1,0 +1,141 @@
+{
+  "title": "Deposit History",
+  "form": {
+    "title": "Deposit",
+    "description": "Select payment method and enter deposit information",
+    "amount": "Deposit amount",
+    "enterAmount": "Enter the amount to deposit",
+    "voucherCode": "Voucher code (optional)",
+    "voucherCodePlaceholder": "Enter promotion code",
+    "applyVoucher": "Apply",
+    "totalAfterDiscount": "Total after discount",
+    "confirm": "Confirm deposit",
+    "note": "Note",
+    "creditAmount": "Credit amount to deposit",
+    "enterCreditAmount": "Enter credit amount to deposit",
+    "minimumCredit": "Minimum credit amount is 10",
+    "maximumCredit": "Maximum credit amount is 100,000",
+    "paymentAmount": "Payment amount",
+    "rates": {
+      "creditToVnd": "Exchange rate: 1 credit = {rate} VND",
+      "creditToUsdt": "Exchange rate: 1 credit = {rate} USDT"
+    },
+    "noteItems": {
+      "checkInfo": "Please check the information carefully before making the transaction.",
+      "processingTime": "Deposit requests will be processed within 24 working hours.",
+      "txidRequired": "Transaction ID (TxID) is required to verify your transaction.",
+      "transferContent": "Please make sure to use the correct transfer content: ",
+      "support": "If you encounter any issues with your deposit, please contact support."
+    },
+    "selectPaymentMethod": "Select payment method",
+    "paymentNotice": "Payment notice",
+    "paymentNoticeDesc": "After confirmation, a new tab will open with our secure payment page.",
+    "paymentMethods": {
+      "online": "PayOS",
+      "onlineName": "Online payment",
+      "onlineDesc": "Pay through online methods (Bank cards, E-wallets, QR Code)"
+    },
+    "wallet": {
+      "usdt_trc20": "USDT-TRC20",
+      "usdt_erc20": "USDT-ERC20",
+      "trc20Address": "USDT wallet address (TRC20)",
+      "erc20Address": "USDT wallet address (ERC20)",
+      "vietqrInfo": "VietQR transfer information",
+      "networkWarningTrc20": "Please only transfer USDT through the TRC20 network. Please note that any transfer fees are borne by the sender",
+      "networkWarningErc20": "ERC20 network gas fees may be high, please check before transferring",
+      "transferContentWarning": "Please enter the correct transfer content",
+      "txid": "Transaction ID (TxID)",
+      "enterTxid": "Enter transaction ID to verify",
+      "txidHelp": "Transaction ID can be found in your wallet's transaction history",
+      "bankTransferId": "Transaction ID",
+      "enterBankId": "Enter bank transaction ID to verify",
+      "instructions": "Payment Instructions",
+      "instructionsDescTrc20": "Please transfer your USDT using the TRC20 network to our wallet address. We'll process your deposit once we confirm the transaction.",
+      "instructionsDescErc20": "Please transfer your USDT using the ERC20 network to our wallet address. We'll process your deposit once we confirm the transaction.",
+      "selectUnit": "Currency Unit",
+      "selectUnitPlaceholder": "Select currency unit",
+      "unitHelp": "Please select the currency unit you will use for payment",
+      "bankInfo": {
+        "bank": "Bank",
+        "accountNumber": "Account number",
+        "accountName": "Account holder",
+        "transferContent": "Transfer content",
+        "enterAmountForQR": "Enter amount to display QR code"
+      }
+    }
+  },
+  "status": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "unknown": "Unknown",
+    "failed": "Failed",
+    "completed": "Completed"
+  },
+  "table": {
+    "depositCode": "Deposit code",
+    "amount": "Amount",
+    "method": "Method",
+    "voucherCode": "Voucher code",
+    "status": "Status",
+    "createdAt": "Created date",
+    "noVoucher": "None",
+    "user": "User"
+  },
+  "voucher": {
+    "applied": "Successfully applied: +",
+    "enterCode": "Enter voucher code",
+    "error": "Please enter voucher code"
+  },
+  "credit": {
+    "total": "{amount} credit",
+    "bonusPercentage": "(+{percentage}%)"
+  },
+  "filter": {
+    "fromDate": "From date",
+    "toDate": "To date",
+    "chooseFromDate": "Choose from date",
+    "chooseToDate": "Choose to date",
+    "code": "Deposit code",
+    "codePlaceholder": "Enter deposit code"
+  },
+  "detail": {
+    "title": "Deposit details",
+    "information": "Deposit information",
+    "transactionId": "Deposit ID",
+    "amount": "Amount",
+    "paymentMethod": "Payment method",
+    "voucherCode": "Promotion code",
+    "createdAt": "Created date",
+    "processedAt": "Processing date",
+    "pending": "Pending",
+    "rejectionReason": "Rejection reason",
+    "noReasonProvided": "No reason provided",
+    "notFound": "Transaction not found",
+    "pendingNote": "Transaction is being processed",
+    "pendingDescription": "Your deposit transaction is being processed. This process may take up to 24 hours. Please check back later.",
+    "approvedNote": "Transaction completed successfully",
+    "balanceUpdated": "Your account balance has been updated with the deposited amount."
+  },
+  "failed": {
+    "title": "Payment failed",
+    "paymentFailed": "Unable to process your payment",
+    "defaultError": "An error occurred while processing your payment. Please try again later.",
+    "errorCode": "Error code",
+    "transactionId": "Transaction ID",
+    "whatHappened": "What happened?",
+    "whatHappenedDesc": "Your payment was declined or an error occurred during the payment process. This could be due to insufficient funds, payment restrictions, or technical issues.",
+    "whatToDo": "What should I do?",
+    "checkPaymentMethod": "Check your payment method information and ensure you have sufficient funds",
+    "tryAgainLater": "Try again later or use a different payment method",
+    "contactSupport": "Contact customer support if the problem persists",
+    "viewHistory": "View deposit history",
+    "tryAgain": "Try again"
+  },
+  "method":{
+    "USDT": "USDT",
+    "QRCODE": "QR code",
+    "PayOS": "PayOS",
+    "Gift": "GIFT"
+  }
+}

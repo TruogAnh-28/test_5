@@ -1,0 +1,33 @@
+{
+  "title": "Danh sách chức vụ",
+  "createTitle": "Tạo chức vụ mới",
+  "updateTitle": "Cập nhật chức vụ",
+  "roleId": "Mã chức vụ",
+  "roleName": "Tên chức vụ",
+  "permissions": "quyền",
+  "permissionsList": "Danh sách quyền",
+  "actions": "Tùy chỉnh",
+  "edit": "Sửa",
+  "delete": "Xóa",
+  "createBtn": "Tạo chức vụ",
+  "managingPermissionsFor": "Quản lý quyền cho",
+  "selectPermissionsDesc": "Chọn các quyền bạn muốn gán cho chức vụ này",
+  "form": {
+    "title": "Chức vụ",
+    "roleName": "Tên chức vụ",
+    "roleNamePlaceholder": "Nhập tên chức vụ",
+    "status": "Trạng thái",
+    "statusOptions": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    },
+    "createSuccess": "Tạo chức vụ thành công",
+    "updateSuccess": "Cập nhật chức vụ thành công",
+    "requestFailed": "Yêu cầu thất bại"
+  },
+  "deleteConfirm": {
+    "title": "Xóa chức vụ",
+    "description": "Bạn có chắc chắn muốn xóa chức vụ này không? Hành động này không thể hoàn tác.",
+    "action": "Xóa chức vụ"
+  }
+}

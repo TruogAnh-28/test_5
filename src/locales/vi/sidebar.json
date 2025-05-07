@@ -1,0 +1,27 @@
+{
+  "home": "Trang chính",
+  "reports": "Báo cáo",
+  "agency": "Đại lý",
+  "campaigns": {
+    "title": "Chiến dịch",
+    "traffic": "Traffic",
+    "backlink": "Backlink"
+  },
+  "transactions": {
+    "title": "Ví của tôi",
+    "deposit": "Nạp tiền",
+    "depositHistory": "Lịch sử nạp tiền",
+    "transactionHistory": "Lịch sử giao dịch",
+    "depositVerification": "Xác minh nạp tiền"
+  },
+  "accounts": {
+    "title": "Tài khoản",
+    "employees": "Nhân viên",
+    "users": "Người dùng"
+  },
+  "permissions": {
+    "title": "Phân quyền",
+    "permissionsList": "Danh sách quyền",
+    "rolesList": "Danh sách vai trò"
+  }
+}

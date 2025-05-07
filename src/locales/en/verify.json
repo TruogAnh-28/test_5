@@ -1,0 +1,28 @@
+{
+    "success": {
+      "title": "Email Verified",
+      "verificationComplete": "Verification Complete",
+      "accountVerified": "Your email has been successfully verified. You can now access all features of your account.",
+      "continueToLogin": "Continue to Login"
+    },
+    "failed": {
+      "title": "Verification Failed",
+      "verificationFailed": "Email Verification Failed",
+      "tokenInvalid": "The verification link is invalid or has expired.",
+      "whatToDo": "What should I do?",
+      "tryAgain": "Try using the verification link again",
+      "checkEmail": "Make sure you're using the most recent verification email",
+      "contactSupport": "Contact support if you continue having problems",
+      "backToLogin": "Back to Login",
+      "resendVerification": "Resend Verification Email",
+      "resending": "Sending...",
+      "resendSuccess": "Verification email sent successfully",
+      "resendError": "Failed to send verification email",
+      "noEmailProvided": "No email provided for resending verification",
+      "noToken": "No verification token provided"
+    },
+    "loading": {
+      "verifying": "Verifying your email..."
+    }
+
+}

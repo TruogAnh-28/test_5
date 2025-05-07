@@ -1,0 +1,56 @@
+{
+  "title": "Transaction History",
+  "status": {
+    "pending": "Pending",
+    "completed": "Completed",
+    "failed": "Failed",
+    "pay": "Payment",
+    "refund": "Refund",
+    "charge": "Charge"
+  },
+  "type": {
+    "payService": "Pay Service",
+    "deposit": "Deposit"
+  },
+  "table": {
+    "transactionId": "Transaction ID",
+    "walletId": "Wallet ID",
+    "user": "User",
+    "amount": "Amount",
+    "status": "Status",
+    "type": "Type",
+    "campaign": "Campaign",
+    "date": "Date"
+  },
+  "filter": {
+    "fromDate": "From date",
+    "toDate": "To date",
+    "chooseFromDate": "Choose from date",
+    "chooseToDate": "Choose to date",
+    "enterWalletId": "Enter wallet ID"
+  },
+  "detail": {
+    "title": "Transaction Details",
+    "information": "Transaction Information",
+    "transactionId": "Transaction ID",
+    "amount": "Amount",
+    "walletId": "Wallet ID",
+    "createdAt": "Created at",
+    "campaignDetails": "Campaign Details",
+    "campaignName": "Campaign Name",
+    "domain": "Domain",
+    "trafficAndCost": "Traffic & Cost",
+    "visits": " visits",
+    "campaignPeriod": "Campaign Period",
+    "keywords": "Keywords",
+    "links": "Links",
+    "keyword": "Keyword",
+    "traffic": "Traffic",
+    "cost": "Cost",
+    "source": "Source",
+    "target": "Target",
+    "noKeywords": "No keywords available",
+    "noLinks": "No links available",
+    "notFound": "Transaction not found"
+  }
+}

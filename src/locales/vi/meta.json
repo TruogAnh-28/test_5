@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "login": {
+          "title": "Đăng nhập"
+    }
+  },
+  "campaigns": {
+    "viewCampaigns": {
+      "title": "Chiến dịch"
+    },
+    "viewCampaign": {
+      "title": "Chi tiết chiến dịch"
+    }
+  }
+}
