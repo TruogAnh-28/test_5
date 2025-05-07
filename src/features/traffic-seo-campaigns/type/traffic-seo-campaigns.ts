@@ -220,7 +220,7 @@ export interface CampaignDetailResponse {
   startDate: string
   endDate: string
   totalTraffic: number
-  cost: number
+  totalCost: number
   domain: string
   search: string
   status: string
@@ -252,11 +252,11 @@ export interface getKeywordbyCampaignIdResponse {
   id: number
   campaignId: number
   name: string
-  url: string[]
+  urls: string[]
   distribution: string
   traffic: number
   trafficCompleted: number
-  logs: LogKeyword[]
+  logs: LogDetailKeyword[]
 }
 
 export interface LogDetailKeyword {
@@ -265,4 +265,10 @@ export interface LogDetailKeyword {
   timestamp: string
   statusId: number
   statusName: string
+}
+
+export interface SearchLogRequest {
+  keywordId: number
+  page: number
+  limit: number
 }

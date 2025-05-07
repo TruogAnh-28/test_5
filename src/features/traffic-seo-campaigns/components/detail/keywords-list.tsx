@@ -1,18 +1,25 @@
 import React from "react"
 
 import {
-  Tag, Signal, MousePointer, ExternalLink, TrendingUp,
+  Tag, Signal, MousePointer, ExternalLink, TrendingUp, History, Clock,
+  Activity, Smartphone, Laptop, Tablet, AlertCircle,
 } from "lucide-react"
 import {
   useTranslations,
 } from "next-intl"
 
 import {
-  type getKeywordbyCampaignIdResponse,
+  type getKeywordbyCampaignIdResponse, type LogDetailKeyword,
 } from "~/features/traffic-seo-campaigns/type/traffic-seo-campaigns"
+import {
+  showDialog,
+} from "~/shared/components/dialogs/use-open-dialog"
 import {
   Badge,
 } from "~/shared/components/ui/badge"
+import {
+  Button,
+} from "~/shared/components/ui/button"
 import {
   Card, CardContent, CardDescription, CardHeader, CardTitle,
 } from "~/shared/components/ui/card"
@@ -23,6 +30,34 @@ interface KeywordsListProps {
 
 export const KeywordsList: React.FC<KeywordsListProps> = ({ keywords }) => {
   const t = useTranslations("trafficSeoCampaigns")
+
+  // Function to render a device icon based on device type
+  const renderDeviceIcon = (device: string) => {
+    const deviceLower = device.toLowerCase()
+    if (deviceLower.includes("mobile")) {
+      return <Smartphone className="size-3 text-primary" />
+    }
+    if (deviceLower.includes("desktop")) {
+      return <Laptop className="size-3 text-primary" />
+    }
+    if (deviceLower.includes("tablet")) {
+      return <Tablet className="size-3 text-primary" />
+    }
+    return <AlertCircle className="size-3 text-primary" />
+  }
+
+  // Handler to view detailed logs in a timeline
+  const handleViewLogs = (
+    keywordId: number, keywordName: string
+  ) => {
+    // Just pass the necessary data to the dialog
+    showDialog(
+      "keyword-logs", {
+        keywordId,
+        keywordName,
+      }
+    )
+  }
 
   return (
     <Card className="border-neutral-200 dark:border-neutral-800">
@@ -36,8 +71,6 @@ export const KeywordsList: React.FC<KeywordsListProps> = ({ keywords }) => {
 
           <Badge variant="outline">
             {keywords.length}
-
-            {" "}
 
             {t("detail.totalKeywords")}
           </Badge>
@@ -75,48 +108,62 @@ export const KeywordsList: React.FC<KeywordsListProps> = ({ keywords }) => {
                           </div>
 
                           <div className="min-w-0">
-                            {" "}
-
-                            {/* Add min-width to allow text truncation */}
                             <h3 className="font-medium text-lg overflow-hidden text-ellipsis">{keyword.name}</h3>
 
                             <p className="text-sm text-muted-foreground flex items-center mt-1">
                               <Signal className="size-3 mr-1 shrink-0" />
 
                               {t("form.keywords.distribution")}
+
                               :
-
-                              {" "}
-
                               {keyword.distribution}
                             </p>
                           </div>
                         </div>
 
-                        <Badge
-                          variant="outline"
-                          className="self-start md:self-center whitespace-nowrap"
-                        >
-                          <TrendingUp className="size-3 mr-1.5 shrink-0" />
+                        <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
+                          <Badge
+                            variant="outline"
+                            className="whitespace-nowrap"
+                          >
+                            <TrendingUp className="size-3 mr-1.5 shrink-0" />
 
-                          {t("form.keywords.traffic")}
+                            {t("form.keywords.traffic")}
 
-                          :
+                            :
+                            {keyword.trafficCompleted}
 
-                          {" "}
+                            /
+                            {keyword.traffic}
+                          </Badge>
 
-                          {keyword.trafficCompleted}
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="whitespace-nowrap"
+                            onClick={
+                              () => handleViewLogs(
+                                keyword.id, keyword.name
+                              )
+                            }
+                          >
+                            <History className="size-4 mr-1" />
 
-                          /
-
-                          {keyword.traffic}
-                        </Badge>
+                            {
+                              t(
+                                "detail.viewLogs", {
+                                  defaultValue: "View Logs",
+                                }
+                              )
+                            }
+                          </Button>
+                        </div>
                       </div>
                     </div>
 
                     {/* Keyword URLs */}
                     {
-                      keyword.url && keyword.url.length > 0 ? (
+                      keyword.urls && keyword.urls.length > 0 ? (
                         <div className="p-4 border-t border-neutral-200 dark:border-neutral-800">
                           <h4 className="text-sm font-medium mb-3 flex items-center">
                             <MousePointer className="size-3.5 mr-1.5 text-muted-foreground shrink-0" />
@@ -126,7 +173,7 @@ export const KeywordsList: React.FC<KeywordsListProps> = ({ keywords }) => {
 
                           <div className="space-y-2 pl-2">
                             {
-                              keyword.url.map((url: string) => (
+                              keyword.urls.map((url: string) => (
                                 <div
                                   key={url}
                                   className="flex items-center gap-2 text-sm group"
@@ -145,6 +192,88 @@ export const KeywordsList: React.FC<KeywordsListProps> = ({ keywords }) => {
                                   </a>
                                 </div>
                               ))
+                            }
+                          </div>
+                        </div>
+                      ) : null
+                    }
+
+                    {/* Recent Logs - show up to 3 most recent logs */}
+                    {
+                      keyword.logs && keyword.logs.length > 0 ? (
+                        <div className="p-4 border-t border-neutral-200 dark:border-neutral-800">
+                          <h4 className="text-sm font-medium mb-3 flex items-center">
+                            <Clock className="size-3.5 mr-1.5 text-muted-foreground shrink-0" />
+
+                            {
+                              t(
+                                "detail.recentLogs", {
+                                  defaultValue: "Recent Activities",
+                                }
+                              )
+                            }
+                          </h4>
+
+                          <div className="space-y-2">
+                            {
+                              keyword.logs.slice(
+                                0, 3
+                              ).map((log: LogDetailKeyword) => (
+                                <div
+                                  key={log.keywordId}
+                                  className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-900 rounded-md"
+                                >
+                                  <div className="flex items-center gap-2">
+                                    <Activity className="size-4 text-primary" />
+
+                                    <span className="text-sm">{log.statusName}</span>
+                                  </div>
+
+                                  <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-1">
+                                      {renderDeviceIcon(log.device)}
+
+                                      <span className="text-xs text-muted-foreground">{log.device}</span>
+                                    </div>
+
+                                    <span className="text-xs text-muted-foreground">
+                                      {
+                                        new Date(log.timestamp).toLocaleString(
+                                          "vi-VN", {
+                                            month: "2-digit",
+                                            day: "2-digit",
+                                            hour: "2-digit",
+                                            minute: "2-digit",
+                                          }
+                                        )
+                                      }
+                                    </span>
+                                  </div>
+                                </div>
+                              ))
+                            }
+
+                            {
+                              keyword.logs.length > 3 && (
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="w-full text-primary"
+                                  onClick={
+                                    () => handleViewLogs(
+                                      keyword.id, keyword.name
+                                    )
+                                  }
+                                >
+                                  {
+                                    t(
+                                      "detail.viewAllLogs", {
+                                        defaultValue: "View all logs",
+                                      }
+                                    )
+                                  }
+                                </Button>
+                              )
                             }
                           </div>
                         </div>

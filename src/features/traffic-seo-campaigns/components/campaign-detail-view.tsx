@@ -16,7 +16,7 @@ import {
   getDetailCampaign,
 } from "~/features/traffic-seo-campaigns/api/traffic-seo-campaigns"
 import {
-  getKeywordyCampaign,
+  getKeywordByCampaign,
 } from "~/features/traffic-seo-campaigns/api/traffic-seo-campaigns-api-extension"
 import {
   CampaignProgressCard,
@@ -59,7 +59,7 @@ export function CampaignDetailView({ id }: { id: number }) {
       "getKeywordyCampaign",
       id,
     ],
-    queryFn: () => getKeywordyCampaign(id),
+    queryFn: () => getKeywordByCampaign(id),
     enabled: !!id,
   })
 
@@ -143,7 +143,7 @@ export function CampaignDetailView({ id }: { id: number }) {
 
         <DomainInfoCard
           domain={campaignDetail.domain}
-          cost={campaignDetail.cost}
+          cost={campaignDetail.totalCost}
         />
       </div>
 

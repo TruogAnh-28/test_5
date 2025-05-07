@@ -4,6 +4,7 @@ import {
   type SearchKeywords,
   type getKeywordbyCampaignIdResponse,
   type LogDetailKeyword,
+  type SearchLogRequest,
 } from "~/features/traffic-seo-campaigns/type/traffic-seo-campaigns"
 import {
   api,
@@ -64,7 +65,7 @@ export const deleteLinkApi = async (linkId: number) => {
   return response
 }
 
-export const getKeywordyCampaign = async (campaignId: number) => {
+export const getKeywordByCampaign = async (campaignId: number) => {
   const response = await api.post<ApiResponse<getKeywordbyCampaignIdResponse[]>>(
     "/keywords/getByCampaign", {
       campaignId,
@@ -73,11 +74,13 @@ export const getKeywordyCampaign = async (campaignId: number) => {
   return response
 }
 
-export const searchLogbyKeyword = async (keywordId: number) => {
+export const searchLogbyKeyword = async (searchLog: SearchLogRequest) => {
   const response = await api.post<ApiResponse<{
     list: LogDetailKeyword[]
   }>>(
-    "/keywords/getLogByKeyword", keywordId
+    "/keywords/searchLog", {
+      searchLog,
+    }
   )
   return response
 }
