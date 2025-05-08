@@ -161,7 +161,7 @@ export function CampaignBasicInfo({
               ({ field }) => (
                 <FormItem>
                   <FormLabel required>
-                    {t("form.campaignInfo")}
+                    {t("form.name")}
 
                     <TooltipProvider>
                       <Tooltip delayDuration={300}>

@@ -78,9 +78,7 @@ export const searchLogbyKeyword = async (searchLog: SearchLogRequest) => {
   const response = await api.post<ApiResponse<{
     list: LogDetailKeyword[]
   }>>(
-    "/keywords/searchLog", {
-      searchLog,
-    }
+    "/keywords/searchLog", searchLog
   )
   return response
 }

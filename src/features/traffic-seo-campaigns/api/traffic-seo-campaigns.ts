@@ -36,7 +36,7 @@ export const deleteTrafficSeoCampaigns = async (id: number) => {
 }
 export const pausedTrafficCampaign = async (id: number) => {
   const response = await api.put<ApiResponse<null>>(
-    `/campaigns/pause/${id}`, ""
+    `/campaigns/cancel/${id}`, ""
   )
   return response
 }
@@ -54,14 +54,5 @@ export const searchTrafficSeoCampaigns = async (filters: SearchTrafficSeoCampaig
 }
 export const getDetailCampaign = async (campaignId: number) => {
   const response = await api.get<ApiResponse<CampaignDetailResponse>>(`/campaigns/${campaignId}`)
-  return response
-}
-export const getCampaignDetail = async (campaignId: number) => {
-  const response = await api.post<ApiResponse<CampaignDetailResponse>>(
-    "/report/campaign-report/campaign",
-    {
-      campaignId: campaignId.toString(),
-    }
-  )
   return response
 }

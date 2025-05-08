@@ -82,9 +82,9 @@ export function ViewTrafficSeoCampaigns() {
     refetch()
   }
 
-  const handlePauseSuccess = () => {
-    refetch()
-  }
+  // const handlePauseSuccess = () => {
+  //   refetch()
+  // }
 
   return (
     <div className="space-y-8">
@@ -120,7 +120,7 @@ export function ViewTrafficSeoCampaigns() {
         }
         hasReset
         hasFilters
-        onPauseSuccess={handlePauseSuccess}
+        // onPauseSuccess={handlePauseSuccess}
         error={error}
         isLoading={isLoading}
       />

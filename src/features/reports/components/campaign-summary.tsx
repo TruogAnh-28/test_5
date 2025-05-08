@@ -10,7 +10,7 @@ import {
 } from "lucide-react"
 import {
   useSession,
-} from "next-auth/react" // Import useSession to access session data
+} from "next-auth/react"
 import {
   useTranslations,
 } from "next-intl"
@@ -168,19 +168,17 @@ function CampaignBarChart({ data }: { data: ReportItemResponse[] }) {
 
 export function CampaignSummary() {
   const t = useTranslations("report")
-  const { data: session } = useSession() // Get session data to check user role
+  const { data: session } = useSession()
 
   // Check if user is admin (role.id === 1) or regular user (role.id === 2)
   const isAdmin = session?.user?.role?.id === 1
 
-  // Default params for the overview report
   const defaultParams: SearchCampaignReport = {
     status: "",
     start_date: "",
     end_date: "",
   }
 
-  // Active campaigns params
   const activeParams: SearchCampaignReport = {
     status: "ACTIVE",
     start_date: "",
@@ -221,10 +219,9 @@ export function CampaignSummary() {
       "reportItems",
       formattedStartDate,
       formattedEndDate,
-      isAdmin, // Include isAdmin in the query key to refetch when role changes
+      isAdmin,
     ],
     queryFn: () => {
-      // Use the appropriate function based on user role
       return isAdmin
         ? getReportItemAdmin({
           start_date: formattedStartDate,

@@ -7,12 +7,12 @@ import Image from "next/image"
 import {
   type VisibilityState, type ColumnDef, getCoreRowModel, useReactTable,
 } from "@tanstack/react-table"
-// import {
-//   Calendar, Globe, Laptop, Smartphone, Tablet, ExternalLink,
-// } from "lucide-react"
 import {
-  Pause, Calendar, Globe, Laptop, Smartphone, Tablet, ExternalLink,
+  Calendar, Globe, Laptop, Smartphone, Tablet, ExternalLink,
 } from "lucide-react"
+// import {
+//   Pause, Calendar, Globe, Laptop, Smartphone, Tablet, ExternalLink,
+// } from "lucide-react"
 import {
   useTranslations,
 } from "next-intl"
@@ -21,9 +21,9 @@ import {
   moneyFormat,
 } from "~/shared/utils/shared"
 
-import {
-  pausedTrafficCampaign,
-} from "~/features/traffic-seo-campaigns/api/traffic-seo-campaigns"
+// import {
+//   pausedTrafficCampaign,
+// } from "~/features/traffic-seo-campaigns/api/traffic-seo-campaigns"
 import {
   TrafficSeoCampaignsFilters,
 } from "~/features/traffic-seo-campaigns/components/filters/traffic-seo-campaigns-filters"
@@ -34,9 +34,9 @@ import {
 import {
   Link,
 } from "~/i18n"
-import {
-  confirmAlert,
-} from "~/shared/components/dialogs/use-confirm-alert"
+// import {
+//   confirmAlert,
+// } from "~/shared/components/dialogs/use-confirm-alert"
 import {
   type BaseDataTableProps, DataTable,
 } from "~/shared/components/tables/data-table"
@@ -53,12 +53,12 @@ import {
 import {
   Badge,
 } from "~/shared/components/ui/badge"
-import {
-  Button,
-} from "~/shared/components/ui/button"
-import {
-  Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,
-} from "~/shared/components/ui/tooltip"
+// import {
+//   Button,
+// } from "~/shared/components/ui/button"
+// import {
+//   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,
+// } from "~/shared/components/ui/tooltip"
 
 const formatDate = (date: Date | string) => {
   if (!date) return "N/A"
@@ -87,7 +87,7 @@ const DeviceIcon = ({ device }: { device: string }) => {
 
 export interface TrafficSeoCampaignsTableProps extends BaseDataTableProps, TableToolbarProps {
   data?: TrafficSeoCampaigns[]
-  onPauseSuccess?: () => void
+  // onPauseSuccess?: () => void
   filters?: SearchTrafficSeoCampaigns
   total?: number
   hasSelection?: boolean
@@ -95,7 +95,7 @@ export interface TrafficSeoCampaignsTableProps extends BaseDataTableProps, Table
 }
 
 export function TrafficSeoCampaignsTable({
-  data, filters, total, onFiltersChange, onFilterClick, onPauseSuccess, hasSelection, FiltersComponent, hasFilters, hasReset, columnVisibility: columnVisibilityProp, ...props
+  data, filters, total, onFiltersChange, onFilterClick, hasSelection, FiltersComponent, hasFilters, hasReset, columnVisibility: columnVisibilityProp, ...props
 }: TrafficSeoCampaignsTableProps) {
   const t = useTranslations("trafficSeoCampaigns")
   const StatusBadge = ({ status }: { status: string }) => {
@@ -282,53 +282,53 @@ export function TrafficSeoCampaignsTable({
           ),
         },
 
-        {
-          id: "actions",
-          header: () => <p className="text-center">{t("action.action")}</p>,
-          meta: {
-            columnName: t("action.action"),
-            allowClick: false,
-          },
-          maxSize: 70,
-          enableHiding: false,
-          cell: ({ row }) => (
-            <TooltipProvider delayDuration={100}>
-              <div className="flex gap-1 justify-center">
-                {
-                  (row.original.status === CampaignStatus.NOT_STARTED || row.original.status === CampaignStatus.ACTIVE) && (
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          onClick={
-                            () =>
-                              confirmAlert({
-                                onAction: () =>
-                                  pausedTrafficCampaign(row.original.id),
-                                onActionSuccess: onPauseSuccess,
-                                document: {
-                                  title: t("action.pauseCampaign"),
-                                  descriptions: t("action.pauseConfirm"),
-                                  action: t("action.pause"),
-                                },
-                              })
-                          }
-                          title={t("action.pause")}
-                          variant="ghost"
-                          size="icon"
-                          className="size-8 hover:text-yellow-600 hover:bg-yellow-100 hover:dark:bg-yellow-800 hover:dark:text-yellow-300"
-                        >
-                          <Pause className="size-4" />
-                        </Button>
-                      </TooltipTrigger>
+        // {
+        //   id: "actions",
+        //   header: () => <p className="text-center">{t("action.action")}</p>,
+        //   meta: {
+        //     columnName: t("action.action"),
+        //     allowClick: false,
+        //   },
+        //   maxSize: 70,
+        //   enableHiding: false,
+        //   cell: ({ row }) => (
+        //     <TooltipProvider delayDuration={100}>
+        //       <div className="flex gap-1 justify-center">
+        //         {
+        //           (row.original.status === CampaignStatus.NOT_STARTED || row.original.status === CampaignStatus.ACTIVE) && (
+        //             <Tooltip>
+        //               <TooltipTrigger asChild>
+        //                 <Button
+        //                   onClick={
+        //                     () =>
+        //                       confirmAlert({
+        //                         onAction: () =>
+        //                           pausedTrafficCampaign(row.original.id),
+        //                         onActionSuccess: onPauseSuccess,
+        //                         document: {
+        //                           title: t("action.pauseCampaign"),
+        //                           descriptions: t("action.pauseConfirm"),
+        //                           action: t("action.pause"),
+        //                         },
+        //                       })
+        //                   }
+        //                   title={t("action.pause")}
+        //                   variant="ghost"
+        //                   size="icon"
+        //                   className="size-8 hover:text-yellow-600 hover:bg-yellow-100 hover:dark:bg-yellow-800 hover:dark:text-yellow-300"
+        //                 >
+        //                   <Pause className="size-4" />
+        //                 </Button>
+        //               </TooltipTrigger>
 
-                      <TooltipContent>{t("action.pause")}</TooltipContent>
-                    </Tooltip>
-                  )
-                }
-              </div>
-            </TooltipProvider>
-          ),
-        },
+        //               <TooltipContent>{t("action.pause")}</TooltipContent>
+        //             </Tooltip>
+        //           )
+        //         }
+        //       </div>
+        //     </TooltipProvider>
+        //   ),
+        // },
       ]
     },
     []

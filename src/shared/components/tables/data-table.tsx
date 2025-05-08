@@ -86,7 +86,7 @@ export function DataTable<T>({
                             cell={cell}
                             className={
                               cn(
-                                "p-2 align-middle group-hover/tableRow:border-secondary group-hover/tableRow:!bg-accent/80 data-[pinned=true]:bg-background group-aria-[selected=true]/tableRow:!bg-light-primary group-aria-[selected=true]/tableRow:!text-primary", allowClick && onRowClick && "cursor-pointer"
+                                "p-2 align-middle group-hover/tableRow:border-secondary group-hover/tableRow:!bg-accent/20 data-[pinned=true]:bg-background group-aria-[selected=true]/tableRow:!bg-light-primary group-aria-[selected=true]/tableRow:!text-primary", allowClick && onRowClick && "cursor-pointer"
                               )
                             }
                             onClick={

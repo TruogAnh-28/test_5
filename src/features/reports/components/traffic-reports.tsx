@@ -29,6 +29,9 @@ import {
   CampaignStatsCard,
 } from "~/features/reports/components/cards/campaign-stats-card"
 import {
+  CampaignDailyTrafficChart,
+} from "~/features/reports/components/charts/campaign-daily-traffic-chart"
+import {
   KeywordTrafficChart,
 } from "~/features/reports/components/charts/keyword-traffic-chart"
 import {
@@ -37,9 +40,6 @@ import {
 import {
   KeywordsTable,
 } from "~/features/reports/components/tables/keywords-table"
-import {
-  LinksTable,
-} from "~/features/reports/components/tables/links-table"
 import {
   Link,
 } from "~/i18n"
@@ -244,6 +244,10 @@ export function TrafficReports({ userId }: TrafficReportsProps = {
               />
             </div>
 
+            {
+              campaignReport ? <CampaignDailyTrafficChart campaignId={campaignReport.campaignId} /> : null
+            }
+
             <div className="grid gap-4 grid-cols-1">
               {
                 campaignReport.keywords.length > 0 && (
@@ -274,12 +278,12 @@ export function TrafficReports({ userId }: TrafficReportsProps = {
                 emptyMessage={t("keywordPerformance.noKeywords")}
               />
 
-              <LinksTable
+              {/* <LinksTable
                 links={campaignReport.links}
                 title={t("trafficReport.links")}
                 description={t("trafficReport.linksDescription")}
                 emptyMessage={t("trafficReport.noLinks")}
-              />
+              /> */}
             </div>
           </React.Fragment>
         ) : (

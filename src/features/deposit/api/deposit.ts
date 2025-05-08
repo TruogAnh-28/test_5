@@ -22,7 +22,7 @@ export const getAllDeposits = async () => {
 export const getDeposit = async (data: {
   id: number
 }) => {
-  const response = await api.get<ApiResponse<DepositDetail>>(`/deposits/${data.id}`)
+  const response = await api.get<ApiResponse<DepositDetail>>(`/deposits/order/${data.id}`)
   return response
 }
 

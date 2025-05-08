@@ -109,6 +109,7 @@ export interface CampaignReport {
   keywordCount: number
   links: LinkAttributes[]
   keywords: KeywordAttributes[]
+  traffic: TrafficDaily[]
 }
 
 /**

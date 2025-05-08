@@ -57,7 +57,7 @@ export const request = async <TResponse>(
       const errorMessage = hasErrorField ? (data.error || data.message || "Đã có lỗi xảy ra") : "Đã có lỗi xảy ra"
 
       toast.error(errorMessage)
-      throw new Error(data.error || data.message || "API error")
+      throw new Error(data.message || data.error || "API error")
     }
 
     return data as TResponse

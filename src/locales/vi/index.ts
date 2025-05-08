@@ -7,6 +7,7 @@ import deposit from "~/locales/vi/deposit.json"
 import report from "~/locales/vi/report.json"
 import role from "~/locales/vi/role.json"
 import sidebar from "~/locales/vi/sidebar.json"
+import submitlinkCampaigns from "~/locales/vi/submitlink-campaigns.json"
 import trafficSeoCampaigns from "~/locales/vi/traffic-seo-campaigns.json"
 import transaction from "~/locales/vi/transaction.json"
 import user from "~/locales/vi/user.json"
@@ -19,6 +20,7 @@ export default {
   common,
   auth,
   trafficSeoCampaigns,
+  submitlinkCampaigns,
   transaction,
   backlinkCampaigns,
   user,

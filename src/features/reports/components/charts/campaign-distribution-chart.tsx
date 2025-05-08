@@ -42,7 +42,6 @@ export const CampaignDistributionChart = () => {
   const { data: session } = useSession()
   const isAdmin = session?.user?.role?.id === 1
 
-  // Get the current date and date from 30 days ago
   const today = new Date()
   const startOfMonth = new Date(
     today.getFullYear(), today.getMonth(), 1
@@ -54,7 +53,6 @@ export const CampaignDistributionChart = () => {
   const formattedStartDate = startOfMonth.toISOString()
   const formattedEndDate = endOfMonth.toISOString()
 
-  // Fetch report data
   const {
     data: reportItemsData, isLoading,
   } = useQuery({
@@ -75,11 +73,11 @@ export const CampaignDistributionChart = () => {
           start_date: formattedStartDate,
           end_date: formattedEndDate,
         }),
+    enabled: !!session?.user.id,
   })
 
   const reportItems = reportItemsData?.data || []
 
-  // Process data for keywords pie chart
   const keywordData = reportItems.map(item => ({
     name: item.campaignName.length > 15 ? item.campaignName.substring(
       0, 15

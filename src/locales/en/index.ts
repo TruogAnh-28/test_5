@@ -7,6 +7,7 @@ import deposit from "~/locales/en/deposit.json"
 import report from "~/locales/en/report.json"
 import role from "~/locales/en/role.json"
 import sidebar from "~/locales/en/sidebar.json"
+import submitlinkCampaigns from "~/locales/en/submitlink-campaigns.json"
 import trafficSeoCampaigns from "~/locales/en/traffic-seo-campaigns.json"
 import transaction from "~/locales/en/transaction.json"
 import user from "~/locales/en/user.json"
@@ -18,6 +19,7 @@ export default {
   sidebar,
   common,
   auth,
+  submitlinkCampaigns,
   trafficSeoCampaigns,
   transaction,
   backlinkCampaigns,

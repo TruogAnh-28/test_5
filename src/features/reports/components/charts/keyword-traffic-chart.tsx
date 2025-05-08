@@ -31,11 +31,9 @@ export function KeywordTrafficChart({
 }: KeywordTrafficChartProps) {
   // Prepare data for chart
   const chartData = keywords.map(keyword => ({
-    name: keyword.name.length > 12 ? `${keyword.name.substring(
-      0, 12
-    )}...` : keyword.name,
-    target: Number(keyword.traffic),
+    name: keyword.name, // Keep full keyword name
     completed: Number(keyword.trafficCompleted),
+    target: Number(keyword.traffic) - Number(keyword.trafficCompleted), // Calculate difference
   }))
 
   return (
@@ -47,7 +45,8 @@ export function KeywordTrafficChart({
       </CardHeader>
 
       <CardContent>
-        <div className="h-64">
+        <div className="h-80">
+          {/* Increased height to accommodate longer names */}
           <ResponsiveContainer
             width="100%"
             height="100%"
@@ -71,17 +70,24 @@ export function KeywordTrafficChart({
               <YAxis
                 dataKey="name"
                 type="category"
-                width={100}
+                width={150}
+                tick={
+                  {
+                    fontSize: 12,
+                  }
+                }
+                tickMargin={5}
               />
 
               <Tooltip
                 labelFormatter={(label: string) => `Keyword: ${label}`}
                 formatter={
                   (
-                    value: number, name: "target" | "completed"
+                    value: number,
+                    name: "target" | "completed"
                   ) => {
                     const displayNames = {
-                      target: "Target Traffic",
+                      target: "Remaining Target Traffic",
                       completed: "Achieved Traffic",
                     }
                     const displayName = displayNames[name] || name
@@ -103,18 +109,20 @@ export function KeywordTrafficChart({
               <Legend />
 
               <Bar
-                dataKey="target"
-                name="Target Traffic"
-                barSize={20}
-                fill="#23a6c7"
-                fillOpacity={0.3}
-              />
-
-              <Bar
                 dataKey="completed"
                 name="Achieved Traffic"
                 barSize={20}
                 fill="#0c9697"
+                stackId="traffic"
+              />
+
+              <Bar
+                dataKey="target"
+                name="Remaining Target Traffic"
+                barSize={20}
+                fill="#23a6c7"
+                fillOpacity={0.3}
+                stackId="traffic"
               />
             </BarChart>
           </ResponsiveContainer>

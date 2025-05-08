@@ -128,10 +128,8 @@ export function KeywordsTable({
                     <TableCell className="text-right">
                       <span className="font-mono">
                         {keyword.trafficCompleted.toLocaleString()}
-
-                        {" "}
-
                         /
+
                         {keyword.traffic.toLocaleString()}
                       </span>
                     </TableCell>

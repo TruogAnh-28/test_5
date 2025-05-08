@@ -14,9 +14,6 @@ import {
   Calendar,
 } from "lucide-react"
 import {
-  useSession,
-} from "next-auth/react"
-import {
   useTranslations,
 } from "next-intl"
 import {
@@ -31,8 +28,7 @@ import {
 } from "recharts"
 
 import {
-  getReportItem,
-  getReportItemAdmin,
+  getOneCampaignReport,
 } from "~/features/reports/api/reports"
 import {
   DayPicker,
@@ -44,12 +40,14 @@ import {
   Card, CardContent, CardHeader, CardTitle,
 } from "~/shared/components/ui/card"
 
-export function CampaignTrafficChart() {
-  const t = useTranslations("dashboard")
+interface CampaignDailyTrafficChartProps {
+  campaignId: number
+}
+
+export function CampaignDailyTrafficChart({ campaignId }: CampaignDailyTrafficChartProps) {
+  const t = useTranslations("trafficSeoCampaigns")
   const tCommon = useTranslations("common")
-  const { data: session } = useSession()
-  const isAdmin = session?.user?.role?.id === 1
-  // Default date range - last 7 days
+
   const today = new Date()
   const defaultEndDate = today.toISOString().split("T")[0]
   const defaultStartDate = subDays(
@@ -64,7 +62,6 @@ export function CampaignTrafficChart() {
     endDate: defaultEndDate,
   })
 
-  // Format date for display
   const formatDate = (date: string) => {
     const d = new Date(date)
     return format(
@@ -77,21 +74,18 @@ export function CampaignTrafficChart() {
   ) => {
     if (!date) return
 
-    // Ensure end date is not in the future
     if (type === "endDate" && isAfter(
       date, today
     )) {
       date = today
     }
 
-    // Ensure start date is not after end date
     if (type === "startDate" && isAfter(
       date, new Date(dateRange.endDate)
     )) {
       return
     }
 
-    // Ensure end date is not before start date
     if (type === "endDate" && isBefore(
       date, new Date(dateRange.startDate)
     )) {
@@ -105,94 +99,47 @@ export function CampaignTrafficChart() {
   }
 
   const {
-    data, isLoading, isError, error,
+    data,
+    isLoading,
+    isError,
+    error,
   } = useQuery({
     queryKey: [
-      "dashboardTrafficReport",
+      "campaignReport",
+      campaignId,
       dateRange,
-      isAdmin,
     ],
-    queryFn: () =>
-      isAdmin ? getReportItemAdmin({
-        start_date: dateRange.startDate,
-        end_date: dateRange.endDate,
-      })
-        : getReportItem({
-          start_date: dateRange.startDate,
-          end_date: dateRange.endDate,
-          userId: session?.user?.id,
-        }),
-    enabled: !!session?.user.id,
+    queryFn: () => getOneCampaignReport(campaignId),
   })
 
   const processChartData = () => {
-    if (!data?.data || data.data.length === 0) return {
-      chartData: [],
-      campaigns: [],
+    if (!data?.data?.traffic || data.data.traffic.length === 0) {
+      return []
     }
 
-    const allDates = new Set<string>()
-    data.data.forEach((campaign) => {
-      campaign.traffic?.forEach((item) => {
-        allDates.add(item.date)
+    const startDateObj = new Date(dateRange.startDate)
+    const endDateObj = new Date(dateRange.endDate)
+
+    return data.data.traffic
+      .filter((item) => {
+        const itemDate = new Date(item.date)
+        return itemDate >= startDateObj && itemDate <= endDateObj
       })
-    })
-
-    const sortedDates = Array.from(allDates).sort()
-
-    const chartData = sortedDates.map((date) => {
-      const dataPoint: Record<string, any> = {
-        date: formatDate(date),
-        rawDate: date,
-      }
-
-      data.data.forEach((campaign) => {
-        dataPoint[`campaign_${campaign.campaignId}`] = 0
+      .map(item => ({
+        date: formatDate(item.date),
+        traffic: item.traffic,
+        rawDate: item.date,
+      }))
+      .sort((
+        a, b
+      ) => {
+        const dateA = new Date(a.rawDate)
+        const dateB = new Date(b.rawDate)
+        return dateA.getTime() - dateB.getTime()
       })
-
-      return dataPoint
-    })
-
-    data.data.forEach((campaign) => {
-      campaign.traffic?.forEach((daily) => {
-        const dataPoint = chartData.find(item => item.rawDate === daily.date)
-        dataPoint && (dataPoint[`campaign_${campaign.campaignId}`] = daily.traffic)
-      })
-    })
-
-    chartData.sort((
-      a, b
-    ) => {
-      const dateA = new Date(a.rawDate)
-      const dateB = new Date(b.rawDate)
-      return dateA.getTime() - dateB.getTime()
-    })
-
-    return {
-      chartData,
-      campaigns: data.data.map(campaign => ({
-        id: campaign.campaignId,
-        name: campaign.campaignName,
-      })),
-    }
   }
 
-  const {
-    chartData, campaigns,
-  } = processChartData()
-
-  const colors = [
-    "#2a7b90",
-    "#27BDBE",
-    "#4C51BF",
-    "#ED64A6",
-    "#48BB78",
-    "#F6AD55",
-    "#F56565",
-    "#805AD5",
-    "#667EEA",
-    "#38B2AC",
-  ]
+  const chartData = processChartData()
 
   if (isLoading) {
     return (
@@ -225,8 +172,8 @@ export function CampaignTrafficChart() {
           <CardTitle>
             {
               t(
-                "trafficTrend", {
-                  defaultValue: "Campaign Traffic Trends",
+                "detail.dailyTrafficChart", {
+                  defaultValue: "Daily Traffic",
                 }
               )
             }
@@ -312,29 +259,46 @@ export function CampaignTrafficChart() {
 
                 <YAxis />
 
-                <Tooltip />
+                <Tooltip
+                  formatter={
+                    value => [
+                      value,
+                      t(
+                        "detail.traffic", {
+                          defaultValue: "Traffic",
+                        }
+                      ),
+                    ]
+                  }
+                  labelFormatter={
+                    label => t(
+                      "detail.date", {
+                        defaultValue: "Date",
+                      }
+                    ) + ": " + label
+                  }
+                />
 
                 <Legend />
 
-                {
-                  campaigns.map((
-                    campaign, index
-                  ) => (
-                    <Line
-                      key={campaign.id}
-                      type="monotone"
-                      dataKey={`campaign_${campaign.id}`}
-                      name={campaign.name}
-                      stroke={colors[index % colors.length]}
-                      activeDot={
-                        {
-                          r: 8,
-                        }
+                <Line
+                  type="monotone"
+                  dataKey="traffic"
+                  name={
+                    t(
+                      "detail.dailyVisits", {
+                        defaultValue: "Daily Visits",
                       }
-                      strokeWidth={2}
-                    />
-                  ))
-                }
+                    )
+                  }
+                  stroke="#27BDBE"
+                  activeDot={
+                    {
+                      r: 8,
+                    }
+                  }
+                  strokeWidth={2}
+                />
               </LineChart>
             </ResponsiveContainer>
           ) : (
@@ -343,7 +307,7 @@ export function CampaignTrafficChart() {
                 {
                   tCommon(
                     "noData", {
-                      defaultValue: "No data available",
+                      defaultValue: "No data available for the selected date range",
                     }
                   )
                 }
