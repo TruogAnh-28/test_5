@@ -29,9 +29,6 @@ import {
 import {
   CampaignBasicInfo,
 } from "~/features/submitlink-campaigns/components/forms/campaign-basic-info"
-// import {
-//   CampaignLinks,
-// } from "~/features/submitlink-campaigns/components/forms/campaign-links"
 import {
   CampaignLinks,
 } from "~/features/submitlink-campaigns/components/forms/campaign-links"
@@ -97,7 +94,6 @@ export function SubmitlinkCampaignsForm({
 
   const configs = configsResponse?.data || []
 
-  const keywordTrafficCost = Number(configs.find(c => c.name === "KEYWORD_TRAFFIC_COST")?.value || "1")
   const linkTrafficCost = Number(configs.find(c => c.name === "LINK_TRAFFIC_COST")?.value || "1")
 
   const handleSubmitSuccess = (id?: number) => {
@@ -166,6 +162,7 @@ export function SubmitlinkCampaignsForm({
               sum, link
             ) => sum + (link?.traffic || 0), 0
           )
+
           const totalTraffic = linkTraffic
           const linkCost = linkTraffic * linkTrafficCost
           const totalCost = linkCost
@@ -191,15 +188,14 @@ export function SubmitlinkCampaignsForm({
           sum, link
         ) => sum + (link?.traffic || 0), 0
       )
-      const totalTraffic = linkTraffic
 
+      const totalTraffic = linkTraffic
       const linkCost = linkTraffic * linkTrafficCost
       const totalCost = linkCost
 
       setCalculatedTraffic(totalTraffic)
       setCalculatedCost(totalCost)
     }, [
-      keywordTrafficCost,
       linkTrafficCost,
       form,
     ]
@@ -215,9 +211,9 @@ export function SubmitlinkCampaignsForm({
         const formattedData = {
           ...data,
           userId: session?.user?.id,
-          campaignTypeId: 3,
-          totalTraffic: undefined,
-          cost: undefined,
+          campaignTypeId: 3, // Use 3 for submitlink campaigns
+          totalTraffic: calculatedTraffic,
+          cost: calculatedCost,
         }
 
         if (props.isCreate) {
@@ -233,6 +229,7 @@ export function SubmitlinkCampaignsForm({
             message: (error as Error).message ?? t("form.errorMessages.requestFailed"),
           }
         )
+        toast.error(t("form.errorMessages.requestFailed"))
       }
       finally {
         setIsSubmitting(false)
@@ -243,6 +240,8 @@ export function SubmitlinkCampaignsForm({
       props,
       session,
       t,
+      calculatedTraffic,
+      calculatedCost,
       router,
     ]
   )
@@ -280,7 +279,6 @@ export function SubmitlinkCampaignsForm({
           tooltips={
             {
               name: t("tooltips.name"),
-
               startDate: t("tooltips.startDate"),
               endDate: t("tooltips.endDate"),
             }

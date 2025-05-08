@@ -10,6 +10,10 @@ import {
 } from "next-intl"
 
 import {
+  formatDateToUTC,
+} from "~/shared/utils/date"
+
+import {
   DepositStatus,
   type SearchDeposits,
 } from "~/features/deposit/type/deposit"
@@ -84,7 +88,7 @@ export function DepositHistoryFilters({
           <DayPicker
             mode="single"
             selected={field.value ? new Date(field.value) : undefined}
-            onSelect={date => field.onChange(date?.toISOString())}
+            onSelect={date => field.onChange(date ? formatDateToUTC(date) : undefined)}
             TriggerComponent={
               (
                 <Button
@@ -107,7 +111,7 @@ export function DepositHistoryFilters({
           <DayPicker
             mode="single"
             selected={field.value ? new Date(field.value) : undefined}
-            onSelect={date => field.onChange(date?.toISOString())}
+            onSelect={date => field.onChange(date ? formatDateToUTC(date) : undefined)}
             TriggerComponent={
               (
                 <Button

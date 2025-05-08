@@ -32,9 +32,9 @@ import {
   FormControl,
   FormField, FormItem, FormLabel, FormMessage,
 } from "~/shared/components/ui/form"
-// import {
-//   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
-// } from "~/shared/components/ui/select"
+import {
+  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+} from "~/shared/components/ui/select"
 import {
   Tooltip,
   TooltipContent,
@@ -63,11 +63,13 @@ export function CampaignBasicInfo({
     0, 0, 0, 0
   )
 
+  // Effect to validate and handle date changes
   useEffect(
     () => {
       const subscription = form.watch((
         value, { name }
       ) => {
+      // Only run when either date changes
         if (name !== "startDate" && name !== "endDate") {
           return
         }
@@ -79,6 +81,7 @@ export function CampaignBasicInfo({
           return
         }
 
+        // If endDate is before startDate, reset endDate and show error
         if (endDate < startDate) {
           form.setValue(
             "endDate", ""
@@ -91,6 +94,7 @@ export function CampaignBasicInfo({
           )
         }
         else {
+        // Clear any existing endDate errors if dates are now valid
           form.clearErrors("endDate")
         }
       })
@@ -101,6 +105,25 @@ export function CampaignBasicInfo({
       t,
     ]
   )
+
+  const DeviceOptions = [
+    {
+      label: t("deviceOptions.desktop"),
+      value: "desktop",
+    },
+    {
+      label: t("deviceOptions.mobile"),
+      value: "mobile",
+    },
+    {
+      label: t("deviceOptions.tablet"),
+      value: "tablet",
+    },
+    {
+      label: t("deviceOptions.all"),
+      value: "all",
+    },
+  ]
 
   return (
     <Card>
@@ -135,6 +158,89 @@ export function CampaignBasicInfo({
                       {...field}
                       placeholder={t("form.placeholders.name")}
                     />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )
+            }
+          />
+
+          <FormField
+            control={form.control}
+            name="domain"
+            render={
+              ({ field }) => (
+                <FormItem>
+                  <FormLabel required>
+                    {t("form.domain")}
+
+                    <TooltipProvider>
+                      <Tooltip delayDuration={300}>
+                        <TooltipTrigger asChild>
+                          <HelpCircle className="ml-1 size-4 inline text-muted-foreground hover:text-foreground cursor-help" />
+                        </TooltipTrigger>
+
+                        <TooltipContent>{tooltips.name}</TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </FormLabel>
+
+                  <FormControl>
+                    <TextInput
+                      {...field}
+                      placeholder={t("form.placeholders.domain")}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )
+            }
+          />
+
+          <FormField
+            control={form.control}
+            name="device"
+            render={
+              ({ field }) => (
+                <FormItem>
+                  <FormLabel required>
+                    {t("form.device")}
+
+                    <TooltipProvider>
+                      <Tooltip delayDuration={300}>
+                        <TooltipTrigger asChild>
+                          <HelpCircle className="ml-1 size-4 inline text-muted-foreground hover:text-foreground cursor-help" />
+                        </TooltipTrigger>
+
+                        <TooltipContent>{tooltips.name}</TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </FormLabel>
+
+                  <FormControl>
+                    <Select
+                      value={field.value}
+                      onValueChange={value => field.onChange(value)}
+                    >
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder={t("form.placeholders.device")} />
+                      </SelectTrigger>
+
+                      <SelectContent className="bg-white border shadow-md">
+                        {
+                          DeviceOptions.map(option => (
+                            <SelectItem
+                              key={option.value}
+                              value={option.value}
+                            >
+                              {option.label}
+                            </SelectItem>
+                          ))
+                        }
+                      </SelectContent>
+                    </Select>
                   </FormControl>
 
                   <FormMessage />
@@ -222,10 +328,10 @@ export function CampaignBasicInfo({
                       onSelect={date => field.onChange(date?.toISOString())}
                       disabled={
                         {
-                          before: startDate || tomorrow,
+                          before: startDate || tomorrow, // Disable dates before start date or today
                         }
                       }
-                      fromDate={startDate || tomorrow}
+                      fromDate={startDate || tomorrow} // Set minimum selectable date to start date or today
                       TriggerComponent={
                         (
                           <Button
@@ -244,6 +350,81 @@ export function CampaignBasicInfo({
                   </FormItem>
                 )
               }
+            }
+          />
+
+          {/* Required fields for submitlink campaigns */}
+          <FormField
+            control={form.control}
+            name="title"
+            render={
+              ({ field }) => (
+                <FormItem>
+                  <FormLabel required>
+                    {t("form.title")}
+
+                    <TooltipProvider>
+                      <Tooltip delayDuration={300}>
+                        <TooltipTrigger asChild>
+                          <HelpCircle className="ml-1 size-4 inline text-muted-foreground hover:text-foreground cursor-help" />
+                        </TooltipTrigger>
+
+                        <TooltipContent>{tooltips.name}</TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </FormLabel>
+
+                  <FormControl>
+                    <TextInput
+                      {...field}
+                      placeholder={t("form.placeholders.title")}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )
+            }
+          />
+
+          <FormField
+            control={form.control}
+            name="search"
+            render={
+              ({ field }) => (
+                <FormItem>
+                  <FormLabel required>
+                    {t("form.search")}
+
+                    <TooltipProvider>
+                      <Tooltip delayDuration={300}>
+                        <TooltipTrigger asChild>
+                          <HelpCircle className="ml-1 size-4 inline text-muted-foreground hover:text-foreground cursor-help" />
+                        </TooltipTrigger>
+
+                        <TooltipContent>{tooltips.name}</TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </FormLabel>
+
+                  <FormControl>
+                    <Select
+                      value={field.value}
+                      onValueChange={value => field.onChange(value)}
+                    >
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder={t("form.placeholders.search")} />
+                      </SelectTrigger>
+
+                      <SelectContent className="bg-white border shadow-md">
+                        <SelectItem value="google">Google</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )
             }
           />
         </div>

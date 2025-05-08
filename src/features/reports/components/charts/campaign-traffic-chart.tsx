@@ -31,6 +31,10 @@ import {
 } from "recharts"
 
 import {
+  formatDateToUTC,
+} from "~/shared/utils/date"
+
+import {
   getReportItem,
   getReportItemAdmin,
 } from "~/features/reports/api/reports"
@@ -51,10 +55,10 @@ export function CampaignTrafficChart() {
   const isAdmin = session?.user?.role?.id === 1
   // Default date range - last 7 days
   const today = new Date()
-  const defaultEndDate = today.toISOString().split("T")[0]
-  const defaultStartDate = subDays(
+  const defaultEndDate = formatDateToUTC(today)
+  const defaultStartDate = formatDateToUTC(subDays(
     today, 7
-  ).toISOString().split("T")[0]
+  ))
 
   const [
     dateRange,
@@ -100,7 +104,7 @@ export function CampaignTrafficChart() {
 
     setDateRange({
       ...dateRange,
-      [type]: date.toISOString().split("T")[0],
+      [type]: formatDateToUTC(date),
     })
   }
 

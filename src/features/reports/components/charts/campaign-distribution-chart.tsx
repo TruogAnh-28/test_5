@@ -15,6 +15,10 @@ import {
 } from "recharts"
 
 import {
+  formatDateToUTC,
+} from "~/shared/utils/date"
+
+import {
   getReportItemAdmin, getReportItem,
 } from "~/features/reports/api/reports"
 import {
@@ -50,8 +54,8 @@ export const CampaignDistributionChart = () => {
     today.getFullYear(), today.getMonth() + 1, 0
   )
 
-  const formattedStartDate = startOfMonth.toISOString()
-  const formattedEndDate = endOfMonth.toISOString()
+  const formattedStartDate = formatDateToUTC(startOfMonth)
+  const formattedEndDate = formatDateToUTC(endOfMonth)
 
   const {
     data: reportItemsData, isLoading,

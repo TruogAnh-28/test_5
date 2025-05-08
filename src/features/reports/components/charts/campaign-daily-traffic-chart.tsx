@@ -28,6 +28,10 @@ import {
 } from "recharts"
 
 import {
+  formatDateToUTC,
+} from "~/shared/utils/date"
+
+import {
   getOneCampaignReport,
 } from "~/features/reports/api/reports"
 import {
@@ -58,8 +62,8 @@ export function CampaignDailyTrafficChart({ campaignId }: CampaignDailyTrafficCh
     dateRange,
     setDateRange,
   ] = useState({
-    startDate: defaultStartDate,
-    endDate: defaultEndDate,
+    startDate: formatDateToUTC(defaultStartDate),
+    endDate: formatDateToUTC(defaultEndDate),
   })
 
   const formatDate = (date: string) => {
