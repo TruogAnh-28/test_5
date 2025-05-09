@@ -1,5 +1,6 @@
 import {
   type Link,
+  type LinkDetailResponse,
 } from "~/features/submitlink-campaigns/type/submitlink-campaigns"
 import {
   api,
@@ -27,5 +28,10 @@ export const addLinkApi = async (link: Link) => {
 
 export const deleteLinkApi = async (linkId: number) => {
   const response = await api.delete<ApiResponse<null>>(`/submitlink-campaigns/links/${linkId}`)
+  return response
+}
+
+export const getLinkByCampaign = async (campaignId: number) => {
+  const response = await api.get<ApiResponse<LinkDetailResponse[]>>(`/links/campaign/${campaignId}`)
   return response
 }

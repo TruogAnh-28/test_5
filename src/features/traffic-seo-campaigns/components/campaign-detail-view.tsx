@@ -144,6 +144,7 @@ export function CampaignDetailView({ id }: { id: number }) {
         <DomainInfoCard
           domain={campaignDetail.domain}
           cost={campaignDetail.totalCost}
+          title={campaignDetail.title}
         />
       </div>
 

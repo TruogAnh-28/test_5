@@ -3,7 +3,7 @@ import React from "react"
 import Image from "next/image"
 
 import {
-  Globe, Laptop, ExternalLink,
+  Globe, Webhook, ExternalLink,
 } from "lucide-react"
 import {
   useTranslations,
@@ -19,11 +19,12 @@ import {
 
 interface DomainInfoCardProps {
   domain: string
+  title: string
   cost: number
 }
 
 export const DomainInfoCard: React.FC<DomainInfoCardProps> = ({
-  domain, cost,
+  domain, cost, title,
 }) => {
   const t = useTranslations("trafficSeoCampaigns")
 
@@ -59,12 +60,12 @@ export const DomainInfoCard: React.FC<DomainInfoCardProps> = ({
           </div>
 
           <div>
-            <h3 className="text-sm font-medium text-muted-foreground">{t("form.device")}</h3>
+            <h3 className="text-sm font-medium text-muted-foreground">{t("form.title")}</h3>
 
             <div className="flex items-center gap-2 mt-1">
-              <Laptop className="size-4 text-muted-foreground" />
+              <Webhook className="size-4 text-muted-foreground" />
 
-              <span>Desktop & Mobile</span>
+              <span>{title}</span>
             </div>
           </div>
 

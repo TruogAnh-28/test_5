@@ -1,11 +1,11 @@
 import React from "react"
 
 import {
+  TrialCard,
+} from "~/features/dashboard/components/trial-card"
+import {
   WelcomeCard,
 } from "~/features/dashboard/components/welcome-card"
-// import {
-//   CampaignSummary,
-// } from "~/features/reports/components/campaign-summary"
 import {
   CampaignDistributionChart,
 } from "~/features/reports/components/charts/campaign-distribution-chart"
@@ -25,7 +25,8 @@ export default function HomePage() {
         <WalletCard />
       </div>
 
-      {/* <CampaignSummary /> */}
+      {/* Trial Card */}
+      <TrialCard />
 
       <CampaignDistributionChart />
 

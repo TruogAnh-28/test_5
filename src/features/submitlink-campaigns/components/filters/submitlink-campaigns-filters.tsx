@@ -3,7 +3,7 @@
 import React from "react"
 
 import {
-  Calendar, Filter, Smartphone, Tablet, Laptop,
+  Calendar,
 } from "lucide-react"
 import {
   useTranslations,
@@ -36,29 +36,6 @@ export function SubmitlinkCampaignsFilters({
 }) {
   const t = useTranslations("submitlinkCampaigns")
 
-  const DeviceOptions = [
-    {
-      label: t("deviceOptions.mobile"),
-      value: "mobile",
-      icon: <Smartphone className="size-4" />,
-    },
-    {
-      label: t("deviceOptions.tablet"),
-      value: "tablet",
-      icon: <Tablet className="size-4" />,
-    },
-    {
-      label: t("deviceOptions.desktop"),
-      value: "desktop",
-      icon: <Laptop className="size-4" />,
-    },
-    {
-      label: t("deviceOptions.all"),
-      value: "all",
-      icon: <Filter className="size-4" />,
-    },
-  ]
-
   const StatusOptions = [
     {
       label: t("statusOptions.active"),
@@ -84,27 +61,6 @@ export function SubmitlinkCampaignsFilters({
 
   const fields = React.useMemo<FilterField[]>(
     () => [
-      {
-        name: "device",
-        title: t("filters.device"),
-        children: ({ field }) => (
-          <ChipPicker
-            options={DeviceOptions}
-            mode="single"
-            value={field.value}
-            onValueChange={value => field.onChange(value)}
-            renderItem={
-              option => (
-                <div className="px-2 py-1.5 pr-3 rounded-full border-2 border-input group-data-[state=checked]:border-primary flex items-center gap-2">
-                  {option.icon}
-
-                  {option.label}
-                </div>
-              )
-            }
-          />
-        ),
-      },
       {
         name: "status",
         title: t("filters.status"),

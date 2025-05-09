@@ -48,7 +48,7 @@ export const createSubmitlinkSchemas = (t: TranslationFunction) => {
     ),
     search: z.string(),
     status: z.string(),
-    links: z.array(linkSchema).optional(),
+    links: z.array(linkSchema),
     userId: z.number().optional(),
     countryId: z.number(),
     campaignTypeId: z.number().optional(),
@@ -189,4 +189,21 @@ export interface CreateCampaignDetailResponse {
   linkCount: number
   keywordCount: number
   links: CampaignLink[]
+}
+
+export interface LinkDetailResponse {
+  createdAt: string
+  updatedAt: string
+  id: number
+  campaignId: number
+  link: string
+  linkTo: string
+  distribution: string
+  traffic: number
+  cost: number
+  anchorText: string
+  status: string
+  url: string
+  page: string
+  isDeleted: boolean
 }

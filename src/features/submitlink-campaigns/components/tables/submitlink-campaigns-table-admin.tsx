@@ -8,7 +8,7 @@ import {
   type VisibilityState, type ColumnDef, getCoreRowModel, useReactTable,
 } from "@tanstack/react-table"
 import {
-  Calendar, Globe, Laptop, Smartphone, Tablet, ExternalLink,
+  Calendar, Link as LinkIcon,
 } from "lucide-react"
 import {
   useTranslations,
@@ -55,19 +55,6 @@ const formatDate = (date: Date | string) => {
       day: "2-digit",
     }
   )
-}
-
-const DeviceIcon = ({ device }: { device: string }) => {
-  if (device === "Desktop") {
-    return <Laptop className="size-4" />
-  }
-  if (device === "Mobile") {
-    return <Smartphone className="size-4" />
-  }
-  if (device === "Tablet") {
-    return <Tablet className="size-4" />
-  }
-  return <Globe className="size-4" />
 }
 
 export interface SubmitlinkCampaignsTableAdminProps extends BaseDataTableProps, TableToolbarProps {
@@ -159,54 +146,18 @@ export function SubmitlinkCampaignsTableAdmin({
           ),
         },
         {
-          header: t("form.domain"),
+          header: t("form.links.count"),
           meta: {
-            columnName: t("form.domain"),
+            columnName: t("form.links.count"),
           },
-          accessorKey: "domain",
+          accessorKey: "links",
           cell: ({ row }) => (
             <div className="flex gap-2 items-center">
-              <Globe className="size-4 text-muted-foreground" />
-
-              <a
-                href={`https://${row.original.domain}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline flex items-center gap-1 max-w-[150px]"
-                title={row.original.domain}
-              >
-                <span className="truncate">{row.original.domain}</span>
-
-                <ExternalLink className="size-3 shrink-0" />
-              </a>
-            </div>
-          ),
-        },
-        {
-          header: t("form.device"),
-          meta: {
-            columnName: t("form.device"),
-          },
-          accessorKey: "device",
-          cell: ({ row }) => (
-            <div className="flex gap-2 items-center">
-              <DeviceIcon device={row.original.device} />
+              <LinkIcon className="size-4 text-muted-foreground" />
 
               <span>
-                {row.original.device}
+                {row.original.links?.length || 0}
               </span>
-            </div>
-          ),
-        },
-        {
-          header: t("form.totalTraffic"),
-          meta: {
-            columnName: t("form.totalTraffic"),
-          },
-          accessorKey: "totalTraffic",
-          cell: ({ row }) => (
-            <div className="font-medium">
-              {row.original.totalTraffic.toLocaleString()}
             </div>
           ),
         },
@@ -218,24 +169,22 @@ export function SubmitlinkCampaignsTableAdmin({
           accessorKey: "cost",
           cell: ({ row }) => (
             <div className="font-medium">
-              <div className="font-medium">
-                <span className="font-medium text-sm flex flex-row items-center gap-2">
-                  {
-                    moneyFormat(
-                      row.original.totalCost, {
-                        suffix: "",
-                      }
-                    )
-                  }
+              <span className="font-medium text-sm flex flex-row items-center gap-2">
+                {
+                  moneyFormat(
+                    row.original.totalCost, {
+                      suffix: "",
+                    }
+                  )
+                }
 
-                  <Image
-                    src="/images/logo/logo_1.png"
-                    alt="Auto Ranker"
-                    width={15}
-                    height={15}
-                  />
-                </span>
-              </div>
+                <Image
+                  src="/images/logo/logo_1.png"
+                  alt="Auto Ranker"
+                  width={15}
+                  height={15}
+                />
+              </span>
             </div>
           ),
         },

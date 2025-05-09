@@ -22,12 +22,12 @@ import {
 } from "~/shared/components/ui/card"
 
 interface CampaignSummaryProps {
-  totalTraffic: number
+  linkCount: number
   totalCost: number
 }
 
 export function CampaignSummary({
-  totalTraffic, totalCost,
+  linkCount, totalCost,
 }: CampaignSummaryProps) {
   const t = useTranslations("submitlinkCampaigns")
 
@@ -47,11 +47,11 @@ export function CampaignSummary({
             <div className="flex justify-between items-center">
               <div>
                 <p className="text-sm text-muted-foreground">
-                  {t("form.summary.calculatedTraffic")}
+                  {t("form.summary.totalLinks")}
                 </p>
 
                 <h3 className="text-xl font-bold mt-1">
-                  {totalTraffic.toLocaleString()}
+                  {linkCount.toLocaleString()}
                 </h3>
               </div>
 

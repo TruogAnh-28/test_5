@@ -9,5 +9,19 @@
     "viewReports": "Xem báo cáo"
   },
   "trafficTrend": "Xu hướng Traffic (7 Ngày Qua)",
-  "totalTraffic": "Tổng Traffic"
+  "totalTraffic": "Tổng Traffic",
+  "trial": {
+      "title": "Ưu Đãi Dùng Thử",
+      "description": "Bắt đầu hành trình với 1000 credit miễn phí! Kích hoạt ngay để trải nghiệm đầy đủ sức mạnh của nền tảng chúng tôi.",
+      "activate": "Kích Hoạt Dùng Thử",
+      "activating": "Đang kích hoạt...",
+      "credits": "CREDIT",
+      "activationSuccess": "Kích hoạt thành công!",
+      "activationError": "Kích hoạt thất bại. Vui lòng thử lại.",
+      "successTitle": "Đã Kích Hoạt Thành Công!",
+      "successDescription": "Chúc mừng! Bạn đã kích hoạt thành công gói dùng thử. 1000 credit đã được thêm vào tài khoản của bạn.",
+      "autoRedirect": "Bạn sẽ được chuyển đến trang chính trong 5 giây...",
+      "backToDashboard": "Trang Chính",
+      "viewReports": "Xem Báo Cáo"
+    }
 }

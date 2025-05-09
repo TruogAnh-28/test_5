@@ -24,6 +24,10 @@ import {
 } from "sonner"
 
 import {
+  formatDateToUTC,
+} from "~/shared/utils/date"
+
+import {
   createSubmitlinkCampaigns,
 } from "~/features/submitlink-campaigns/api/submitlink-campaigns"
 import {
@@ -76,9 +80,10 @@ export function SubmitlinkCampaignsForm({
   ] = useState(false)
 
   const [
-    calculatedTraffic,
-    setCalculatedTraffic,
+    linkCount,
+    setLinkCount,
   ] = useState(0)
+
   const [
     calculatedCost,
     setCalculatedCost,
@@ -94,7 +99,8 @@ export function SubmitlinkCampaignsForm({
 
   const configs = configsResponse?.data || []
 
-  const linkTrafficCost = Number(configs.find(c => c.name === "LINK_TRAFFIC_COST")?.value || "1")
+  // Cost per link
+  const linkCost = Number(configs.find(c => c.name === "LINK_COST")?.value || "1")
 
   const handleSubmitSuccess = (id?: number) => {
     form.reset()
@@ -117,12 +123,13 @@ export function SubmitlinkCampaignsForm({
 
   const initialValues: Partial<SubmitlinkCampaignsInput> = {
     name: "",
-    type: "submitlink",
-    device: "all",
-    title: "",
     startDate: tomorrow.toISOString(),
     endDate: defaultEndDate.toISOString(),
-    domain: "",
+    // Default values that will be set but not shown to user
+    type: "submitlink",
+    device: "all",
+    title: "Submitlink Campaign",
+    domain: "example.com",
     search: "google",
     status: "ACTIVE",
     links: [],
@@ -133,8 +140,8 @@ export function SubmitlinkCampaignsForm({
     Object.assign(
       initialValues, {
         ...props.values,
-        startDate: props.values.startDate instanceof Date ? props.values.startDate.toISOString() : props.values.startDate,
-        endDate: props.values.endDate instanceof Date ? props.values.endDate.toISOString() : props.values.endDate,
+        startDate: props.values.startDate,
+        endDate: props.values.endDate,
         links: props.values.links || [],
       }
     )
@@ -150,53 +157,33 @@ export function SubmitlinkCampaignsForm({
       const subscription = form.watch((
         value, { name }
       ) => {
-        if (
-          name?.includes("links")
-          || name === "startDate"
-          || name === "endDate"
-        ) {
+        if (name?.includes("links")) {
           const currentLinks = form.getValues("links") || []
+          const count = currentLinks.length
+          const cost = count * linkCost
 
-          const linkTraffic = currentLinks.reduce(
-            (
-              sum, link
-            ) => sum + (link?.traffic || 0), 0
-          )
-
-          const totalTraffic = linkTraffic
-          const linkCost = linkTraffic * linkTrafficCost
-          const totalCost = linkCost
-
-          setCalculatedTraffic(totalTraffic)
-          setCalculatedCost(totalCost)
+          setLinkCount(count)
+          setCalculatedCost(cost)
         }
       })
 
       return () => subscription.unsubscribe()
     }, [
       form,
-      linkTrafficCost,
+      linkCost,
     ]
   )
 
   useEffect(
     () => {
       const initialLinks = form.getValues("links") || []
+      const count = initialLinks.length
+      const cost = count * linkCost
 
-      const linkTraffic = initialLinks.reduce(
-        (
-          sum, link
-        ) => sum + (link?.traffic || 0), 0
-      )
-
-      const totalTraffic = linkTraffic
-      const linkCost = linkTraffic * linkTrafficCost
-      const totalCost = linkCost
-
-      setCalculatedTraffic(totalTraffic)
-      setCalculatedCost(totalCost)
+      setLinkCount(count)
+      setCalculatedCost(cost)
     }, [
-      linkTrafficCost,
+      linkCost,
       form,
     ]
   )
@@ -211,9 +198,26 @@ export function SubmitlinkCampaignsForm({
         const formattedData = {
           ...data,
           userId: session?.user?.id,
-          campaignTypeId: 3, // Use 3 for submitlink campaigns
-          totalTraffic: calculatedTraffic,
-          cost: calculatedCost,
+          campaignTypeId: 3,
+          startDate: formatDateToUTC(data.startDate),
+          endDate: formatDateToUTC(data.endDate),
+          type: "submitlink",
+          device: "all",
+          title: "Submitlink Campaign",
+          domain: "example.com",
+          search: "google",
+          status: "ACTIVE",
+          countryId: 1,
+          links: data.links.map(link => ({
+            link: link.link,
+            linkTo: "default.com",
+            distribution: "DAY",
+            traffic: 0,
+            anchorText: "",
+            status: "ACTIVE",
+            url: "",
+            page: "",
+          })),
         }
 
         if (props.isCreate) {
@@ -240,8 +244,6 @@ export function SubmitlinkCampaignsForm({
       props,
       session,
       t,
-      calculatedTraffic,
-      calculatedCost,
       router,
     ]
   )
@@ -269,7 +271,7 @@ export function SubmitlinkCampaignsForm({
       }
 
       <CampaignSummary
-        totalTraffic={calculatedTraffic}
+        linkCount={linkCount}
         totalCost={calculatedCost}
       />
 
@@ -287,19 +289,7 @@ export function SubmitlinkCampaignsForm({
 
         <CampaignLinks
           form={form}
-          linkRateCost={linkTrafficCost}
-          tooltips={
-            {
-              link: t("tooltips.link"),
-              linkTarget: t("tooltips.linkTarget"),
-              traffic: t("tooltips.linkTraffic"),
-              distribution: t("tooltips.distribution"),
-              anchorText: t("tooltips.anchorText"),
-              status: t("tooltips.status"),
-              url: t("tooltips.url"),
-              page: t("tooltips.page"),
-            }
-          }
+          linkCost={linkCost}
         />
       </div>
     </AppForm>

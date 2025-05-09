@@ -5,7 +5,7 @@ import React, {
 
 import {
   Tag, Signal, MousePointer, ExternalLink, TrendingUp, History, Clock,
-  Activity, Smartphone, Laptop, Tablet, AlertCircle,
+  Activity, Smartphone, Laptop, Tablet, AlertCircle, XCircle,
 } from "lucide-react"
 import {
   useTranslations,
@@ -47,7 +47,6 @@ export const KeywordsList: React.FC<KeywordsListProps> = ({ keywords }) => {
     keywordName: string
   } | null>(null)
 
-  // Function to render a device icon based on device type
   const renderDeviceIcon = (device: string) => {
     const deviceLower = device.toLowerCase()
     if (deviceLower.includes("mobile")) {
@@ -61,7 +60,15 @@ export const KeywordsList: React.FC<KeywordsListProps> = ({ keywords }) => {
     }
     return <AlertCircle className="size-3 text-primary" />
   }
-
+  const renderStatusIcon = (statusId: number) => {
+    if (statusId === 1) {
+      return <Activity className="size-4 text-green-500" />
+    }
+    if (statusId === 2) {
+      return <XCircle className="size-4 text-red-500" />
+    }
+    return <Activity className="size-4 text-primary" />
+  }
   const handleViewLogs = (
     keywordId: number, keywordName: string
   ) => {
@@ -258,7 +265,7 @@ export const KeywordsList: React.FC<KeywordsListProps> = ({ keywords }) => {
                                     className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-900 rounded-md"
                                   >
                                     <div className="flex items-center gap-2">
-                                      <Activity className="size-4 text-primary" />
+                                      {renderStatusIcon(log.statusId)}
 
                                       <span className="text-sm">{log.statusName}</span>
                                     </div>

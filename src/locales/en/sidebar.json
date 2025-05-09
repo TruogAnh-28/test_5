@@ -5,7 +5,8 @@
   "campaigns": {
     "title": "Campaigns",
     "traffic": "Traffic",
-    "backlink": "Backlink"
+    "backlink": "Backlink",
+    "submitlink": "Submit Link"
   },
   "transactions": {
     "title": "My Wallet",

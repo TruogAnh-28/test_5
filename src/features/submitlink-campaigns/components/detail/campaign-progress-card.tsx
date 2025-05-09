@@ -1,7 +1,10 @@
 import React from "react"
 
+// import {
+//   BarChart2, Calendar, Tag, Target, Link as LinkIcon,
+// } from "lucide-react"
 import {
-  BarChart2, Calendar, Tag, Target,
+  BarChart2, Calendar, Target, Link as LinkIcon,
 } from "lucide-react"
 import {
   useTranslations,
@@ -18,8 +21,8 @@ interface CampaignProgressCardProps {
   progress: number
   daysRemaining: number
   totalTraffic: number
-  keywordCount: number
-  // linkCount: number
+  // keywordCount: number
+  linkCount: number
 }
 
 export const CampaignProgressCard: React.FC<CampaignProgressCardProps> = ({
@@ -29,8 +32,8 @@ export const CampaignProgressCard: React.FC<CampaignProgressCardProps> = ({
   progress,
   daysRemaining,
   totalTraffic,
-  keywordCount,
-  // linkCount,
+  // keywordCount,
+  linkCount,
 }) => {
   const t = useTranslations("trafficSeoCampaigns")
 
@@ -111,7 +114,7 @@ export const CampaignProgressCard: React.FC<CampaignProgressCardProps> = ({
             </div>
 
             {/* Keywords */}
-            <div className="bg-neutral-50 dark:bg-neutral-900 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800">
+            {/* <div className="bg-neutral-50 dark:bg-neutral-900 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800">
               <div className="flex items-center gap-2 text-foreground mb-1">
                 <Tag className="size-4" />
 
@@ -119,10 +122,10 @@ export const CampaignProgressCard: React.FC<CampaignProgressCardProps> = ({
               </div>
 
               <p className="text-2xl font-bold">{keywordCount}</p>
-            </div>
+            </div> */}
 
             {/* Backlinks */}
-            {/* <div className="bg-neutral-50 dark:bg-neutral-900 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800">
+            <div className="bg-neutral-50 dark:bg-neutral-900 p-3 rounded-lg border border-neutral-200 dark:border-neutral-800">
               <div className="flex items-center gap-2 text-foreground mb-1">
                 <LinkIcon className="size-4" />
 
@@ -130,7 +133,7 @@ export const CampaignProgressCard: React.FC<CampaignProgressCardProps> = ({
               </div>
 
               <p className="text-2xl font-bold">{linkCount}</p>
-            </div> */}
+            </div>
           </div>
         </div>
       </CardContent>

@@ -159,8 +159,8 @@ export function TrafficSeoCampaignsForm({
     Object.assign(
       initialValues, {
         ...props.values,
-        startDate: props.values.startDate instanceof Date ? props.values.startDate : props.values.startDate,
-        endDate: props.values.endDate instanceof Date ? props.values.endDate : props.values.endDate,
+        startDate: props.values.startDate,
+        endDate: props.values.endDate,
         keywords: props.values.keywords?.map(keyword => ({
           ...keyword,
           urls: keyword.urls || [],
@@ -260,8 +260,8 @@ export function TrafficSeoCampaignsForm({
           campaignTypeId: 1,
           totalTraffic: undefined,
           cost: undefined,
-          startDate: formatDateToUTC(data.startDate), // Chuẩn hóa startDate
-          endDate: formatDateToUTC(data.endDate), // Chuẩn hóa endDate
+          startDate: formatDateToUTC(data.startDate),
+          endDate: formatDateToUTC(data.endDate),
         }
 
         if (props.isCreate) {

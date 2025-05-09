@@ -1,205 +1,105 @@
 {
-  "title": "Danh sách chiến dịch Traffic SEO",
-  "titleCreate": "Tạo chiến dịch Traffic mới",
-  "titleUpdate": "Cập nhật chiến dịch Traffic",
+  "title": "Danh sách chiến dịch Submit Link",
+  "titleCreate": "Tạo Submit Link",
+  "titleUpdate": "Cập nhật chiến dịch",
   "titleDetail": "Chi tiết chiến dịch",
   "create": "Tạo chiến dịch",
   "edit": "Chỉnh sửa chiến dịch",
   "detail": {
-    "summary": "Thông tin tổng quan",
-    "keywordCount": "Số từ khóa",
-    "linkCount": "Số liên kết",
-    "backToList": "Trở về danh sách",
-    "errorTitle": "Lỗi Khi Tải Chiến Dịch",
-    "errorLoading": "Lỗi tải dữ liệu chiến dịch",
+    "summary": "Tóm tắt chiến dịch",
+    "linkCount": "Liên kết",
+    "backToList": "Quay lại danh sách",
+    "errorTitle": "Lỗi tải chiến dịch",
+    "errorLoading": "Lỗi khi tải dữ liệu chiến dịch",
     "unknownError": "Đã xảy ra lỗi không xác định",
-    "notFoundTitle": "Không Tìm Thấy Chiến Dịch",
-    "noDetailsFound": "Không thể tìm thấy thông tin chiến dịch được yêu cầu.",
-    "progress": "Tiến Độ Chiến Dịch",
-    "campaignTimeline": "Tiến trình và các chỉ số hiệu suất chính",
+    "notFoundTitle": "Không tìm thấy chiến dịch",
+    "noDetailsFound": "Không thể tìm thấy chi tiết chiến dịch được yêu cầu.",
+    "progress": "Tiến độ chiến dịch",
+    "campaignTimeline": "Dòng thời gian và chỉ số chính",
     "daysRemaining": "ngày còn lại",
-    "targetTraffic": "Traffic mục tiêu",
-    "domainInfo": "Thông tin tên miền",
-    "statusJustStarted": "Mới bắt đầu",
-    "statusInProgress": "Đang tiến hành",
-    "statusNearlyComplete": "Gần hoàn thành",
-    "statusComplete": "Đã hoàn thành",
-    "totalKeywords": "từ khóa",
-    "keywordsDescription": "Các từ khóa được nhắm mục tiêu trong chiến dịch SEO này với chỉ số traffic và phân phối",
     "totalLinks": "liên kết",
-    "linksDescription": "Các backlink được tạo cho chiến dịch này với trạng thái và chỉ số traffic",
-    "date": "Ngày",
-    "dailyTrafficChart": "Thống kê traffic hằng ngày",
-    "dailyVisits": "Lượng truy cập hằng ngày",
-    "traffic": "Traffic"
-  },
-  "details": {
-    "recentLogs": "Nhật kí log",
-    "viewLogs": "Xem nhật ký",
-    "keywordLogs": "Nhật ký hoạt động từ khóa",
-    "noLogs": "Không có nhật ký",
-    "noLogsDesc": "Hiện tại chưa có nhật ký hoạt động nào cho từ khóa này."
+    "linksDescription": "Liên kết đã được submit cho chiến dịch này"
   },
   "filters": {
-    "device": "Thiết bị",
-    "allDevices": "Tất cả thiết bị",
     "status": "Trạng thái",
-    "domain": "Tên miền",
-    "dateRange": "Thời gian",
-    "startDate": "Bắt đầu:",
-    "endDate": "Kết thúc:",
+    "dateRange": "Khoảng thời gian",
+    "startDate": "Ngày bắt đầu: ",
+    "endDate": "Ngày kết thúc: ",
     "chooseStartDate": "Chọn ngày bắt đầu",
-    "chooseEndDate": "Chọn ngày kết thúc",
-    "enterDomain": "Nhập tên miền cần lọc"
-  },
-  "deviceOptions": {
-    "mobile": "Mobile",
-    "tablet": "Tablet",
-    "desktop": "Desktop",
-    "all": "Tất cả thiết bị"
+    "chooseEndDate": "Chọn ngày kết thúc"
   },
   "statusOptions": {
-    "active": "Hoạt động",
+    "active": "Đang hoạt động",
     "paused": "Tạm dừng",
-    "scheduled": "Lên lịch",
-    "inactive": "Vô hiệu",
+    "scheduled": "Đã lên lịch",
+    "inactive": "Không hoạt động",
     "processing": "Đang xử lý",
     "notStarted": "Chưa bắt đầu",
-    "completed": "Hoàn thành",
-    "cancel": "Đã hủy"
+    "completed": "Đã hoàn tất",
+    "cancel": "Hủy"
   },
   "form": {
-    "campaignInfo": "Thông Tin Chiến Dịch",
-    "campaign": "Chiến dịch",
+    "campaignInfo": "Thông tin chiến dịch",
     "sectionInfo": "chiến dịch",
-    "user": "Người dùng",
     "name": "Tên chiến dịch",
-    "domain": "Tên miền",
-    "search": "Công cụ tìm kiếm",
-    "title": "Tên trang web",
-    "country": "Quốc gia",
-    "device": "Thiết bị",
-    "startDate": "Ngày bắt đầu",
-    "totalTraffic": "Tổng traffic",
+    "user": "Người dùng",
+    "title": "Tiêu đề web",
+    "dateRange": "Khoảng thời gian",
     "cost": "Chi phí",
+    "startDate": "Ngày bắt đầu",
     "endDate": "Ngày kết thúc",
-    "isSubmmitting": "Đang tạo chiến dịch",
-    "submitting": "Đang xử lý yêu cầu của bạn...",
-    "dailyTraffic": "Traffic hằng ngày",
-    "dateRange": "Thời gian",
+    "isSubmmitting": "Đang submit",
+    "submitting": "Đang xử lý yêu cầu...",
     "summary": {
-      "title": "Tổng quan chiến dịch",
-      "calculatedTraffic": "Tổng traffic",
-      "calculatedCost": "Tổng chi phí",
-      "traffic": "Traffic"
+      "title": "Tóm tắt chiến dịch",
+      "totalLinks": "Tổng số liên kết",
+      "calculatedCost": "Tổng chi phí"
     },
     "placeholders": {
       "name": "Nhập tên chiến dịch",
-      "domain": "Nhập tên miền (ví dụ: example.com)",
-      "search": "Nhập công cụ tìm kiếm (ví dụ: Google)",
-      "title": "Nhập tên trang web",
-      "country": "Chọn quốc gia",
-      "device": "Chọn thiết bị"
+      "domain": "Nhập tên miền (vd. example.com)"
     },
     "errors": {
       "endDateBeforeStartDate": "Ngày kết thúc phải sau ngày bắt đầu"
     },
-    "keywords": {
-      "title": "Từ khóa",
-      "add": "Thêm từ khóa",
-      "empty": "Chưa có từ khóa nào. Hãy thêm từ khóa cho chiến dịch.",
-      "keyword": "Từ khóa",
-      "name": "Từ khóa",
-      "traffic": "Traffic",
-      "distribution": "Phân phối",
-      "urls": "URLs",
-      "addUrl": "Thêm URL",
-      "costCalculation": "Tính toán chi phí",
-      "placeholders": {
-        "name": "Nhập từ khóa",
-        "traffic": "Nhập traffic cho từ khóa này",
-        "url": "https://example.com/page"
-      }
+    "errorMessages": {
+      "invalidSourceUrl": "Nguồn liên kết phải là URL hợp lệ",
+      "requestFailed": "Yêu cầu thất bại"
     },
     "links": {
       "title": "Liên kết",
       "add": "Thêm liên kết",
-      "empty": "Chưa có liên kết nào. Hãy thêm liên kết cho chiến dịch.",
+      "empty": "Chưa có liên kết nào. Vui lòng thêm liên kết cho chiến dịch.",
       "link": "Liên kết",
-      "linkSource": "Link nguồn",
-      "linkTarget": "Link đích",
-      "distribution": "Phân phối",
-      "traffic": "Traffic",
-      "anchorText": "Anchor Text",
-      "status": "Trạng thái",
-      "url": "URL",
-      "page": "Trang",
-      "costCalculation": "Tính toán chi phí",
+      "linkSource": "Nguồn liên kết",
+      "count": "Số lượng liên kết",
+      "cost": "Chi phí mỗi liên kết",
       "placeholders": {
-        "linkSource": "Nhập link nguồn",
-        "linkTarget": "Nhập link đích",
-        "distribution": "Nhập cách phân phối",
-        "traffic": "Nhập traffic cho liên kết này",
-        "anchorText": "Nhập anchor text",
-        "url": "Nhập URL",
-        "page": "Nhập trang"
+        "linkSource": "Nhập nguồn liên kết"
       }
-    },
-    "distributionOptions": {
-      "day": "Ngày",
-      "month": "Tháng",
-      "year": "Năm"
     },
     "successMessages": {
       "create": "Chiến dịch đã được tạo thành công",
-      "update": "Cập nhật chiến dịch thành công"
-    },
-    "errorMessages": {
-      "atLeastOneUrl": "Vui lòng nhập ít nhất một URL",
-      "requestFailed": "Yêu cầu thất bại",
-      "invalidSourceUrl": "Nguồn liên kết phải là một URL hợp lệ",
-      "invalidTargetUrl": "Đích liên kết phải là một URL hợp lệ",
-      "trafficPositive": "Traffic truy cập không được nhỏ hơn 0",
-      "totalTrafficPositive": "Tổng traffic truy cập không được nhỏ hơn 0",
-      "costPositive": "Chi phí không được nhỏ hơn 0",
-      "invalidDomain": "Tên miền phải là một URL hợp lệ",
-      "invalidUrl": "URL phải hợp lệ",
-      "requireKeywordOrLink": "Chiến dịch phải có ít nhất một từ khóa hoặc một liên kết",
-      "endDateBeforeStartDate": "Ngày kết thúc phải sau ngày bắt đầu"
+      "update": "Chiến dịch đã được cập nhật thành công"
     }
   },
   "tooltips": {
-    "name": "Nhập tên mô tả cho chiến dịch của bạn để dễ dàng nhận biết",
-    "domain": "Tên miền trang web: example.com",
-    "search": "Công cụ tìm kiếm nơi chiến dịch của bạn sẽ hiển thị",
-    "title": "Tiêu đề sẽ xuất hiện trong kết quả tìm kiếm",
-    "startDate": "Thời điểm chiến dịch nên bắt đầu",
-    "endDate": "Thời điểm chiến dịch nên kết thúc",
-    "device": "Thiết bị mục tiêu cho chiến dịch của bạn",
-    "status": "Trạng thái hiện tại của chiến dịch",
-    "country": "Quốc gia mục tiêu cho traffic chiến dịch của bạn",
-    "keyword": "Cụm từ tìm kiếm mà người dùng sẽ tìm thấy nội dung của bạn",
-    "keywordTraffic": "Traffic truy cập tổng cộng của từ khóa này được ước tính từ ngày bắt đầu đến ngày kết thúc",
-    "linkTraffic": "Số lượng khách truy cập ước tính cho backlink này",
-    "distribution": "Cách traffic sẽ được phân phối theo thời gian",
-    "link": "Trang web nơi backlink sẽ được đặt",
-    "linkTarget": "URL đích nơi người dùng sẽ được chuyển hướng đến",
-    "anchorText": "Văn bản có thể nhấp vào chứa liên kết",
-    "url": "URL đầy đủ bao gồm http:// hoặc https://",
-    "page": "Trang cụ thể nơi liên kết sẽ được đặt"
+    "name": "Nhập tên mô tả cho chiến dịch để dễ nhận biết",
+    "startDate": "Thời gian bắt đầu chiến dịch",
+    "endDate": "Thời gian kết thúc chiến dịch"
   },
   "table": {
-    "noData": "Không có dữ liệu nào.",
+    "noData": "Không có dữ liệu.",
     "loading": "Đang tải dữ liệu..."
   },
-  "action":{
-    "action": "Tùy chỉnh",
+  "action": {
+    "action": "Thao tác",
     "edit": "Chỉnh sửa",
     "pause": "Tạm dừng",
     "pauseCampaign": "Tạm dừng chiến dịch",
-    "pauseConfirm": "Bạn có chắc chắn muốn tạm dừng chiến dịch này? Hành động này sẽ ngừng tạo traffic cho chiến dịch này.",
+    "pauseConfirm": "Bạn có chắc chắn muốn tạm dừng chiến dịch này?",
     "deleteCampaign": "Xóa chiến dịch",
-    "deleteConfirm": "Bạn có chắc chắn muốn xóa chiến dịch này không?",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa chiến dịch này?",
     "delete": "Xóa"
   },
   "close": "Đóng"

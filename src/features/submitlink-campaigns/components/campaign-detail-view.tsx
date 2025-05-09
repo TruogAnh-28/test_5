@@ -16,14 +16,14 @@ import {
   getDetailCampaign,
 } from "~/features/submitlink-campaigns/api/submitlink-campaigns"
 import {
+  getLinkByCampaign,
+} from "~/features/submitlink-campaigns/api/submitlink-campaigns-api-extension"
+import {
   CampaignHeader,
 } from "~/features/submitlink-campaigns/components/detail/campaign-header"
 import {
   CampaignProgressCard,
 } from "~/features/submitlink-campaigns/components/detail/campaign-progress-card"
-// import {
-//   DomainInfoCard,
-// } from "~/features/submitlink-campaigns/components/detail/domain-info-card"
 import {
   ErrorCard,
 } from "~/features/submitlink-campaigns/components/detail/error-card"
@@ -49,11 +49,22 @@ export function CampaignDetailView({ id }: { id: number }) {
     queryFn: () => getDetailCampaign(id),
     enabled: !!id,
   })
-
+  const {
+    data: linksData,
+    isLoading: isLinksLoading,
+    error: linksError,
+  } = useQuery({
+    queryKey: [
+      "getLinkyCampaign",
+      id,
+    ],
+    queryFn: () => getLinkByCampaign(id),
+    enabled: !!id,
+  })
   const campaignDetail = campaignData?.data
-  const links = campaignDetail?.links || []
-  const isLoading = isCampaignLoading
-  const error = campaignError
+  const links = linksData?.data || []
+  const isLoading = isCampaignLoading || isLinksLoading
+  const error = campaignError || linksError
 
   if (isLoading) {
     return <Loading />
@@ -109,21 +120,16 @@ export function CampaignDetailView({ id }: { id: number }) {
         campaignId={campaignDetail.id}
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         <CampaignProgressCard
           className="md:col-span-2"
           startDate={campaignDetail.startDate}
           endDate={campaignDetail.endDate}
           progress={progress}
           daysRemaining={daysRemaining}
-          totalTraffic={campaignDetail.totalTraffic}
+          totalTraffic={0} // Not used for submitlink
           linkCount={links.length}
         />
-
-        {/* <DomainInfoCard
-          domain={campaignDetail.domain}
-          cost={campaignDetail.totalCost}
-        /> */}
       </div>
 
       <div className="w-full">
@@ -141,6 +147,7 @@ export function CampaignDetailView({ id }: { id: number }) {
           </h2>
         </div>
 
+        {/* Only show the link field in the links list */}
         <LinksList links={links} />
       </div>
     </div>

@@ -9,5 +9,19 @@
     "viewReports": "View Reports"
   },
   "trafficTrend": "Traffic Trend",
-  "totalTraffic": "Total Traffic"
+  "totalTraffic": "Total Traffic",
+  "trial": {
+    "title": "Free Trial Offer",
+    "description": "Start your journey with 1000 free credits! Activate your trial now and experience the full power of our platform.",
+    "activate": "Activate Trial",
+    "activating": "Activating...",
+    "credits": "CREDITS",
+    "activationSuccess": "Trial activated successfully!",
+    "activationError": "Failed to activate trial. Please try again.",
+    "successTitle": "Trial Activated!",
+    "successDescription": "Congratulations! You've successfully activated your trial. 1000 credits have been added to your account.",
+    "autoRedirect": "You will be redirected to the dashboard in 5 seconds...",
+    "backToDashboard": "Dashboard",
+    "viewReports": "View Reports"
+  }
 }

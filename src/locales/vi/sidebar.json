@@ -5,7 +5,8 @@
   "campaigns": {
     "title": "Chiến dịch",
     "traffic": "Traffic",
-    "backlink": "Backlink"
+    "backlink": "Backlink",
+    "submitlink": "Submit Link"
   },
   "transactions": {
     "title": "Ví của tôi",

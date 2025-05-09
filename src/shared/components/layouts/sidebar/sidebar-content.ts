@@ -50,6 +50,10 @@ export function useSidebarContent(): MenuItem[] {
           title: t("campaigns.traffic"),
           url: "/traffic-seo-campaigns",
         },
+        {
+          title: t("campaigns.submitlink"),
+          url: "/submitlink-campaigns",
+        },
         // {
         //   title: t("campaigns.backlink"),
         //   url: "/backlink-campaigns",
